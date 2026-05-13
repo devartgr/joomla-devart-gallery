@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelogs>
+
+    <changelog>
+        <element>com_devartgallery</element>
+        <type>component</type>
+        <version>1.0.0</version>
+
+        <addition>
+            <item>Added full Joomla 6 native DevArt Gallery component with modern MVC architecture</item>
+            <item>Added active managed gallery system</item>
+            <item>Added legacy gallery indexing with read-only compatibility support</item>
+            <item>Added shortcode support for legacy and active galleries</item>
+            <item>Added frontend gallery display module</item>
+            <item>Added content plugin for article gallery rendering</item>
+            <item>Added editor button for easy gallery shortcode insertion</item>
+            <item>Added popup image viewer support</item>
+            <item>Added gallery management interface</item>
+            <item>Added Manage Photos interface with pagination</item>
+            <item>Added Scan Existing Photos support</item>
+            <item>Added automatic image indexing system</item>
+            <item>Added support for JPG, PNG and WEBP image uploads</item>
+            <item>Added automatic JPG optimization workflow</item>
+            <item>Added strict filename sanitization policy</item>
+            <item>Added watermark support</item>
+            <item>Added Joomla ACL permissions support</item>
+            <item>Added Keep Data on Uninstall option</item>
+            <item>Added GitHub-based Joomla update server support</item>
+        </addition>
+
+        <change>
+            <item>Gallery architecture designed specifically for Joomla 6 and PHP 8.2+</item>
+            <item>Legacy gallery compatibility implemented without modifying historical gallery folders</item>
+            <item>Frontend rendering kept lightweight to minimize template conflicts</item>
+            <item>CSS and JavaScript namespaced for safer third-party compatibility</item>
+            <item>Manage Photos optimized with pagination for larger galleries</item>
+            <item>Gallery indexing optimized for controlled batch operations</item>
+            <item>Modern service provider and MVCComponent architecture used throughout</item>
+        </change>
+
+        <security>
+            <item>Added SQL injection protection using Joomla database APIs and parameterized queries</item>
+            <item>Added XSS protection through proper output escaping</item>
+            <item>Added CSRF protection for administrator actions</item>
+            <item>Added path traversal protection for filesystem operations</item>
+            <item>Added strict filename validation for safer uploads</item>
+            <item>Added ACL enforcement for administrator operations</item>
+        </security>
+
+        <note>
+            <item>Initial public production release of DevArt Gallery for Joomla 6</item>
+            <item>Designed for editorial, news and high-traffic Joomla websites</item>
+            <item>Always test on a staging environment before production deployment</item>
+        </note>
+    </changelog>
+
+</changelogs>
