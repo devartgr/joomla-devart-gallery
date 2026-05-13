@@ -4,7 +4,7 @@ Professional image gallery component for Joomla 6, designed for editorial, news,
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.4-orange)
+![Release](https://img.shields.io/badge/Version-1.0.9-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -13,7 +13,7 @@ Professional image gallery component for Joomla 6, designed for editorial, news,
 
 DevArt Image Gallery is a modern Joomla 6 gallery package built for stable image gallery management, legacy gallery compatibility, migration workflows, and lightweight frontend rendering.
 
-It is designed for editorial and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
+It is designed for editorial, magazine, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
 ---
 
@@ -48,7 +48,7 @@ It is designed for editorial and high-traffic Joomla websites that need a clean,
 
 ### Shortcode Support
 
-DevArt Image Gallery supports simple portable article shortcodes.
+DevArt Image Gallery supports portable article shortcodes.
 
 Legacy example:
 
@@ -58,7 +58,7 @@ Active gallery example:
 
 `{gallery}galleries2/my-gallery{/gallery}`
 
-This allows clean migration-friendly gallery publishing.
+This allows clean migration-friendly gallery publishing across Joomla installations.
 
 ---
 
@@ -96,12 +96,12 @@ Features:
 - Access control support
 - Menu assignment support
 
-Perfect for:
+Ideal for:
 
 - homepage blocks
 - sidebars
 - landing pages
-- featured image sections
+- featured content areas
 
 ---
 
@@ -121,7 +121,7 @@ Ideal for:
 ### Popup Viewer
 
 - Lightweight popup image viewer
-- No heavy external frameworks
+- No heavy external gallery frameworks
 - Responsive behavior
 - Optional frontend popup mode
 - No filename captions by default
@@ -152,12 +152,12 @@ This package installs:
 1. Download the latest release from GitHub
 2. Go to:
 
-System → Extensions → Install
+`System → Extensions → Install`
 
 3. Upload the package ZIP file
 4. Open:
 
-Components → DevArt Image Gallery
+`Components → DevArt Image Gallery`
 
 5. Configure component options
 6. Enable the content plugin, editor button plugin, and module if required
@@ -170,7 +170,7 @@ DevArt Image Gallery supports Joomla native updates via GitHub.
 
 Once installed, future updates are available through:
 
-System → Extensions → Update
+`System → Extensions → Update`
 
 Update server:
 
@@ -186,7 +186,7 @@ Update server:
 2. Create a new gallery
 3. Upload images
 4. Manage gallery photos
-5. Insert gallery into article or module
+5. Insert gallery into article, module, or menu item
 6. Publish
 
 ---
@@ -254,21 +254,23 @@ Not supported:
 
 ## Current Version
 
-1.0.4
+1.0.9
 
 ---
 
-## Changelog 1.0.4
+## Changelog 1.0.9
 
-- Fixed custom Legacy Archive Directory handling
-- Fixed custom Active Gallery Directory handling
-- Fixed dashboard path display when custom directories are used
-- Fixed Legacy Index rebuild with non-default paths
-- Fixed Active Index rebuild with custom paths
-- Fixed legacy indexing conflicts when Legacy path includes Active gallery folders
+- Fixed Joomla component configuration parameter handling when stored in nested JSON format
+- Fixed Dashboard showing fallback or incorrect gallery paths instead of configured values
+- Fixed Legacy Archive Directory display inconsistencies
+- Fixed Active Gallery Directory display inconsistencies
+- Fixed Legacy Index rebuild using incorrect directory values in specific installations
+- Fixed Active Index rebuild using incorrect directory values in specific installations
+- Fixed indexing behavior when configuration values were correctly saved but incorrectly read
+- Improved compatibility with different Joomla parameter storage behaviors
+- Improved gallery indexing reliability
 - Improved migration safety
-- Improved path normalization
-- Improved configuration consistency
+- Improved internal configuration loading consistency
 
 ---
 
