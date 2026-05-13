@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <updates>
     <update>
-        <name>DevArt Gallery</name>
-        <description>DevArt Gallery for Joomla</description>
+        <name>DevArt Image Gallery</name>
+        <description>DevArt Image Gallery for Joomla</description>
+
         <element>com_devartgallery</element>
         <type>component</type>
         <client>administrator</client>
-        <version>1.0.0</version>
 
-        <infourl title="DevArt Gallery">https://github.com/devartgr/joomla-devart-gallery</infourl>
+        <version>1.0.4</version>
+
+        <infourl title="DevArt Image Gallery">
+            https://github.com/devartgr/joomla-devart-gallery
+        </infourl>
 
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v1.0.0/pkg_devartgallery_v1.0.0.zip</downloadurl>
+            <downloadurl type="full" format="zip">
+                https://github.com/devartgr/joomla-devart-gallery/releases/download/v1.0.4/pkg_devartgallery_v1.0.4.zip
+            </downloadurl>
         </downloads>
 
-        <sha256>d4ee9941de6816674cfaf6043dd2b6a8877938e0b1cf4b9b0dd275bff5ab5a67</sha256>
+        <sha256>
+            b720dea65cf2e423f4db028015a50c9b91cb0eb4f9d353a574ea5c1d54dddb18
+        </sha256>
 
-        <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/changelog.xml</changelogurl>
+        <changelogurl>
+            https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/changelog.xml
+        </changelogurl>
 
         <targetplatform name="joomla" version="6.*" />
         <php_minimum>8.2</php_minimum>
 
         <maintainer>Kostas Stathopoulos</maintainer>
-        <maintainerurl>https://joomla.devart.gr</maintainerurl>
+        <maintainerurl>https://devart.gr</maintainerurl>
     </update>
 </updates>
