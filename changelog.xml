@@ -12,18 +12,19 @@
             <item>Fixed dashboard directory cards showing incorrect default paths after configuration changes</item>
             <item>Fixed Legacy Index rebuild ignoring custom Legacy Archive Directory settings</item>
             <item>Fixed Active Index rebuild ignoring custom Active Gallery Directory settings</item>
-            <item>Fixed legacy indexing conflicts when Legacy Archive Directory included the Active Gallery Directory</item>
+            <item>Fixed legacy indexing conflicts when Legacy Archive Directory includes the Active Gallery Directory</item>
         </fix>
 
         <change>
             <item>Improved path normalization and component parameter loading consistency</item>
             <item>Improved migration safety when legacy galleries are indexed from broader directories</item>
             <item>Improved dashboard accuracy for custom gallery path deployments</item>
+            <item>Improved Joomla Update metadata consistency for production releases</item>
         </change>
 
         <note>
-            <item>First stable public production release of DevArt Image Gallery for Joomla 6</item>
-            <item>Recommended update for all earlier test and pre-release builds</item>
+            <item>This release focuses on custom path handling, indexing reliability and migration safety</item>
+            <item>Recommended update for all users of version 1.0.0, 1.0.1, 1.0.2 and 1.0.3</item>
         </note>
     </changelog>
 
@@ -34,21 +35,21 @@
 
         <addition>
             <item>Added full Joomla 6 native DevArt Image Gallery component with modern MVC architecture</item>
-            <item>Added active managed gallery system for new galleries</item>
+            <item>Added active managed gallery system</item>
             <item>Added legacy gallery indexing with read-only compatibility support</item>
             <item>Added portable path-based shortcode support for legacy and active galleries</item>
             <item>Added frontend gallery display module</item>
             <item>Added content plugin for article gallery rendering</item>
             <item>Added editor button for easy gallery shortcode insertion</item>
-            <item>Added frontend popup image viewer support</item>
+            <item>Added popup image viewer support</item>
             <item>Added responsive frontend gallery layouts</item>
             <item>Added Normal Grid and Masonry frontend display modes</item>
             <item>Added gallery management interface</item>
             <item>Added Manage Photos interface with pagination</item>
-            <item>Added Scan Existing Photos support for active galleries</item>
-            <item>Added automatic gallery indexing system</item>
+            <item>Added Scan Existing Photos support</item>
+            <item>Added automatic image indexing system</item>
             <item>Added support for JPG, PNG and WEBP image uploads</item>
-            <item>Added automatic image optimization workflow with configurable output settings</item>
+            <item>Added automatic image optimization workflow</item>
             <item>Added strict filename sanitization policy</item>
             <item>Added optional watermark support per gallery</item>
             <item>Added Joomla menu item integration for direct gallery frontend pages</item>
