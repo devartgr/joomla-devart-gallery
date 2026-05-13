@@ -4,6 +4,35 @@
     <changelog>
         <element>com_devartgallery</element>
         <type>component</type>
+        <version>1.0.9</version>
+
+        <fix>
+            <item>Fixed component configuration parameter handling when Joomla stores component params in nested JSON format</item>
+            <item>Fixed Dashboard showing fallback or incorrect gallery paths instead of configured values</item>
+            <item>Fixed Legacy Archive Directory display inconsistencies in administrator dashboard</item>
+            <item>Fixed Active Gallery Directory display inconsistencies in administrator dashboard</item>
+            <item>Fixed Legacy Index rebuild using incorrect directory values in specific installations</item>
+            <item>Fixed Active Index rebuild using incorrect directory values in specific installations</item>
+            <item>Fixed indexing behavior when configuration values were correctly saved but incorrectly read by internal component logic</item>
+        </fix>
+
+        <change>
+            <item>Improved compatibility with different Joomla component parameter storage behaviors</item>
+            <item>Improved dashboard configuration accuracy across installations</item>
+            <item>Improved gallery indexing reliability for production environments</item>
+            <item>Improved migration safety for legacy gallery deployments</item>
+            <item>Improved internal configuration loading consistency</item>
+        </change>
+
+        <note>
+            <item>This release focuses on configuration reliability, indexing stability and production consistency</item>
+            <item>Recommended update for all previous DevArt Gallery releases</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartgallery</element>
+        <type>component</type>
         <version>1.0.4</version>
 
         <fix>
@@ -23,8 +52,8 @@
         </change>
 
         <note>
-            <item>This release focuses on custom path handling, indexing reliability and migration safety</item>
-            <item>Recommended update for all users of version 1.0.0, 1.0.1, 1.0.2 and 1.0.3</item>
+            <item>This release focused on custom path handling, indexing reliability and migration safety</item>
+            <item>Recommended update for users of earlier initial releases</item>
         </note>
     </changelog>
 
