@@ -4,7 +4,7 @@ Professional image gallery component for Joomla 6, designed for editorial, news,
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.9-orange)
+![Release](https://img.shields.io/badge/Version-1.0.10-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -254,23 +254,26 @@ Not supported:
 
 ## Current Version
 
-1.0.9
+1.0.10
 
 ---
 
-## Changelog 1.0.9
+## Changelog 1.0.10
 
-- Fixed Joomla component configuration parameter handling when stored in nested JSON format
-- Fixed Dashboard showing fallback or incorrect gallery paths instead of configured values
-- Fixed Legacy Archive Directory display inconsistencies
-- Fixed Active Gallery Directory display inconsistencies
-- Fixed Legacy Index rebuild using incorrect directory values in specific installations
-- Fixed Active Index rebuild using incorrect directory values in specific installations
-- Fixed indexing behavior when configuration values were correctly saved but incorrectly read
-- Improved compatibility with different Joomla parameter storage behaviors
-- Improved gallery indexing reliability
-- Improved migration safety
-- Improved internal configuration loading consistency
+### Fixed
+
+- Fixed critical Joomla 6 administrator fatal error in New Gallery workflow
+- Fixed incorrect New Gallery model architecture
+- Fixed broken Save workflow for newly created galleries
+- Fixed broken Back / Cancel toolbar behavior
+- Fixed missing administrator language string:
+  `COM_DEVARTGALLERY_ALIAS`
+
+### Improved
+
+- Improved Joomla 6 administrator form compatibility
+- Improved production stability for gallery management
+- Improved reliability of New Gallery create/save operations
 
 ---
 
@@ -300,7 +303,6 @@ Migration:
 
 ## Known Notes
 
-- Editor button gallery ordering may receive further refinements in a future update
 - Always test template compatibility and caching behavior before full production rollout
 
 ---
