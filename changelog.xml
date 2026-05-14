@@ -4,6 +4,32 @@
     <changelog>
         <element>com_devartgallery</element>
         <type>component</type>
+        <version>1.0.10</version>
+
+        <fix>
+            <item>Fixed critical Joomla 6 administrator fatal error in New Gallery workflow caused by incorrect model architecture</item>
+            <item>Fixed New Gallery model to use proper Joomla AdminModel form workflow</item>
+            <item>Fixed broken gallery save workflow for newly created galleries</item>
+            <item>Fixed broken administrator Back / Cancel toolbar behavior in New Gallery view</item>
+            <item>Fixed missing administrator language string COM_DEVARTGALLERY_ALIAS</item>
+        </fix>
+
+        <change>
+            <item>Improved Joomla 6 administrator form compatibility for gallery creation workflow</item>
+            <item>Improved production stability for administrator gallery management</item>
+            <item>Improved reliability of New Gallery create/save operations</item>
+        </change>
+
+        <note>
+            <item>Critical production hotfix release</item>
+            <item>Recommended update for all DevArt Gallery v1.0.9 installations</item>
+            <item>No frontend behavior changes or feature modifications in this release</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartgallery</element>
+        <type>component</type>
         <version>1.0.9</version>
 
         <fix>
