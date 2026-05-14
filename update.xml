@@ -6,15 +6,15 @@
         <element>com_devartgallery</element>
         <type>component</type>
         <client>administrator</client>
-        <version>1.0.9</version>
+        <version>1.0.10</version>
 
         <infourl title="DevArt Image Gallery">https://github.com/devartgr/joomla-devart-gallery</infourl>
 
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v.1.0.9/pkg_devartgallery_v1.0.9.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v.1.0.10/pkg_devartgallery_v1.0.10.zip</downloadurl>
         </downloads>
 
-        <sha256>ad98799b9bdd2ba6f978337626dd3fb962e81a46f4257888f2692789a35f581f</sha256>
+        <sha256>1de47f7839d9df69a119154fe381dc50286d1c7d16d5c870744fb2c4ca511619</sha256>
 
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/changelog.xml</changelogurl>
 
