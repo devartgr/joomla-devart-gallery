@@ -4,6 +4,46 @@
     <changelog>
         <element>com_devartgallery</element>
         <type>component</type>
+        <version>1.0.11</version>
+
+        <addition>
+            <item>Added thumbnail cache system for improved frontend gallery performance</item>
+            <item>Added dedicated thumbnail folders per gallery</item>
+            <item>Added per-gallery thumbnail width and height settings</item>
+            <item>Added global default thumbnail settings for newly created galleries</item>
+            <item>Added thumbnail generation during new gallery photo upload workflow</item>
+            <item>Added on-demand thumbnail generation for existing Active galleries</item>
+            <item>Added on-demand thumbnail generation for existing Legacy galleries</item>
+            <item>Added automatic missing thumbnail regeneration support</item>
+            <item>Added thumbnail cache versioning based on gallery thumbnail settings</item>
+            <item>Added thumbnail retention and cleanup settings</item>
+        </addition>
+
+        <change>
+            <item>Improved gallery grid performance by serving optimized thumbnails instead of larger gallery images</item>
+            <item>Improved bandwidth usage for image-heavy gallery pages</item>
+            <item>Improved scalability for large Joomla gallery installations</item>
+            <item>Improved Cloudflare and CDN friendliness for gallery frontend rendering</item>
+            <item>Improved filesystem organization by separating original gallery images from generated thumbnails</item>
+            <item>Improved self-healing behavior when thumbnail files are missing</item>
+            <item>Existing Active and Legacy galleries now build thumbnail cache progressively only when requested on the frontend</item>
+            <item>New gallery uploads now create thumbnails during save/upload operations</item>
+        </change>
+
+        <note>
+            <item>Performance-focused release for high-traffic and image-heavy Joomla websites</item>
+            <item>Existing galleries are not processed during installation or upgrade</item>
+            <item>No mass thumbnail generation is performed during update</item>
+            <item>Thumbnail cache is created progressively as galleries are accessed</item>
+            <item>No database schema changes introduced</item>
+            <item>No migration process required</item>
+            <item>Recommended update for all DevArt Gallery installations</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartgallery</element>
+        <type>component</type>
         <version>1.0.10</version>
 
         <fix>
