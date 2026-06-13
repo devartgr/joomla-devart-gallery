@@ -4,7 +4,7 @@ Professional image gallery component for Joomla 6, designed for editorial, news,
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.10-orange)
+![Release](https://img.shields.io/badge/Version-1.0.11-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -13,7 +13,9 @@ Professional image gallery component for Joomla 6, designed for editorial, news,
 
 DevArt Image Gallery is a modern Joomla 6 gallery package built for stable image gallery management, legacy gallery compatibility, migration workflows, and lightweight frontend rendering.
 
-It is designed for editorial, magazine, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
+It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
+
+Version 1.0.11 introduces the new Thumbnail Cache system, significantly improving gallery performance by serving optimized thumbnails while preserving original gallery images.
 
 ---
 
@@ -32,6 +34,31 @@ It is designed for editorial, magazine, and high-traffic Joomla websites that ne
 - Optional per-gallery watermark support
 - Automatic gallery image indexing
 - Publishing state management
+
+---
+
+### Thumbnail Cache System
+
+New in Version 1.0.11
+
+- Dedicated thumbnail cache architecture
+- Separate thumbnail storage from original gallery images
+- Per-gallery thumbnail settings
+- Global default thumbnail settings
+- Automatic thumbnail generation for newly uploaded images
+- On-demand thumbnail generation for existing galleries
+- Self-healing thumbnail regeneration
+- Thumbnail cache versioning
+- Automatic cleanup support
+- High-traffic deployment friendly
+
+Benefits:
+
+- Faster gallery loading
+- Reduced bandwidth consumption
+- Smaller image payloads
+- Better Core Web Vitals performance
+- Improved Cloudflare and CDN efficiency
 
 ---
 
@@ -68,7 +95,8 @@ This allows clean migration-friendly gallery publishing across Joomla installati
 - Supports multiple galleries in a single article
 - Lightweight frontend rendering
 - Joomla Page Cache compatible
-- CDN / Cloudflare friendly output
+- CDN friendly
+- Cloudflare friendly
 
 ---
 
@@ -98,10 +126,10 @@ Features:
 
 Ideal for:
 
-- homepage blocks
-- sidebars
-- landing pages
-- featured content areas
+- Homepage blocks
+- Sidebars
+- Landing pages
+- Featured content areas
 
 ---
 
@@ -111,10 +139,10 @@ Create dedicated frontend gallery pages through Joomla menu items.
 
 Ideal for:
 
-- standalone gallery pages
-- public gallery archives
-- visual landing pages
-- navigation-linked image collections
+- Standalone gallery pages
+- Public gallery archives
+- Visual landing pages
+- Navigation-linked image collections
 
 ---
 
@@ -185,9 +213,19 @@ Update server:
 1. Configure Active Gallery Directory
 2. Create a new gallery
 3. Upload images
-4. Manage gallery photos
-5. Insert gallery into article, module, or menu item
-6. Publish
+4. Thumbnails are generated automatically
+5. Manage gallery photos
+6. Insert gallery into article, module, or menu item
+7. Publish
+
+---
+
+### For Existing Active Galleries
+
+1. Upgrade to Version 1.0.11
+2. No migration required
+3. Thumbnail cache is created automatically when galleries are first accessed
+4. Existing galleries continue to function normally
 
 ---
 
@@ -197,6 +235,7 @@ Update server:
 2. Rebuild Legacy Index
 3. Verify indexed galleries
 4. Continue using existing shortcodes
+5. Thumbnail cache is created automatically only when galleries are requested
 
 ---
 
@@ -220,17 +259,21 @@ Built for production environments.
 
 Features include:
 
-- lightweight frontend rendering
-- minimal JavaScript footprint
-- minimal CSS footprint
-- no unnecessary frontend libraries
-- pagination for photo management
-- optimized query patterns
-- controlled indexing operations
+- Thumbnail cache system
+- Lightweight frontend rendering
+- Minimal JavaScript footprint
+- Minimal CSS footprint
+- No unnecessary frontend libraries
+- Pagination for photo management
+- Optimized query patterns
+- Controlled indexing operations
 - Joomla Page Cache friendly
 - CDN friendly
 - Cloudflare compatible
-- high-traffic deployment friendly
+- High-traffic deployment friendly
+- Progressive thumbnail generation
+- Automatic thumbnail cache rebuilding
+- Reduced frontend image payloads
 
 ---
 
@@ -241,45 +284,66 @@ Supported:
 - Joomla 6.x
 - PHP 8.2+
 - Joomla native update system
-- modern Joomla MVC architecture
+- Modern Joomla MVC architecture
 
 Not supported:
 
 - Joomla 3
 - Joomla 4
 - Joomla 5
-- legacy PHP versions
+- Legacy PHP versions
 
 ---
 
 ## Current Version
 
-1.0.10
+1.0.11
 
 ---
 
-## Changelog 1.0.10
+## Changelog 1.0.11
 
-### Fixed
+### Added
 
-- Fixed critical Joomla 6 administrator fatal error in New Gallery workflow
-- Fixed incorrect New Gallery model architecture
-- Fixed broken Save workflow for newly created galleries
-- Fixed broken Back / Cancel toolbar behavior
-- Fixed missing administrator language string:
-  `COM_DEVARTGALLERY_ALIAS`
+- Thumbnail cache system
+- Per-gallery thumbnail settings
+- Global default thumbnail settings
+- Dedicated thumbnail storage
+- Automatic thumbnail generation
+- On-demand thumbnail generation
+- Missing thumbnail auto-rebuild
+- Thumbnail cache retention controls
+- Thumbnail cache versioning
 
 ### Improved
 
-- Improved Joomla 6 administrator form compatibility
-- Improved production stability for gallery management
-- Improved reliability of New Gallery create/save operations
+- Gallery frontend performance
+- Bandwidth usage
+- Cloudflare compatibility
+- CDN efficiency
+- Scalability for large galleries
+- High-traffic deployment readiness
+
+### Notes
+
+- No database schema changes
+- No migration required
+- Existing galleries are not processed during upgrade
+- Thumbnail cache is built progressively as galleries are accessed
 
 ---
 
 ## Production Recommendations
 
 Recommended defaults:
+
+Thumbnail Cache:
+
+- Enabled
+- WEBP format
+- 400x350 thumbnails
+- Crop mode
+- 180-day retention
 
 Frontend:
 
@@ -290,19 +354,21 @@ Frontend:
 
 Uploads:
 
-- strict filename policy enabled
-- optimized output sizing
-- safe upload size limits
+- Strict filename policy enabled
+- Optimized output sizing
+- Safe upload size limits
 
 Migration:
 
-- use Legacy mode only for archive compatibility
-- use Active galleries for all new content
+- Use Legacy mode only for archive compatibility
+- Use Active galleries for all new content
 
 ---
 
 ## Known Notes
 
+- Existing Active and Legacy galleries build thumbnail cache only when first requested
+- New gallery uploads generate thumbnails automatically
 - Always test template compatibility and caching behavior before full production rollout
 
 ---
