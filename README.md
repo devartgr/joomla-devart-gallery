@@ -1,21 +1,34 @@
-# DevArt Image Gallery for Joomla
+# DevArt Gallery for Joomla
 
-Professional image gallery component for Joomla 6, designed for editorial, news, magazine, and high-performance websites.
+Professional image gallery package for Joomla 6, designed for editorial, news, magazine, and high-performance websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.11-orange)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
+![Release](https://img.shields.io/badge/Version-1.1.0-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
 
 ## Overview
 
-DevArt Image Gallery is a modern Joomla 6 gallery package built for stable image gallery management, legacy gallery compatibility, migration workflows, and lightweight frontend rendering.
+DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery management, legacy gallery compatibility, migration workflows, and lightweight frontend rendering.
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version 1.0.11 introduces the new Thumbnail Cache system, significantly improving gallery performance by serving optimized thumbnails while preserving original gallery images.
+Version **1.1.0** is a public minor release after baseline **1.0.11**. It adds a Widgets-aligned administrator UI, gallery hub workflow, packaged languages, package-only update ownership, and security/performance hardening.
+
+Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.1.0
+
+- Administrator Galleries, Index, and Dashboard rebuilt to match DevArt Widgets
+- Gallery hub with Overview, Photos, and Settings tabs
+- Packaged languages: Greek, French, German, Spanish, Italian, Portuguese
+- Package-only update channel (`pkg_devartgallery`) at repository root
+- Security, ACL, upload, path, and pagination hardening
+- Frontend safety caps for module and content plugin image rendering
 
 ---
 
@@ -23,170 +36,87 @@ Version 1.0.11 introduces the new Thumbnail Cache system, significantly improvin
 
 ### Active Managed Galleries
 
-- Create and manage new galleries directly from the Joomla administrator
-- Upload JPG, PNG and WEBP images
+- Create and manage galleries from the Joomla administrator
+- Upload JPG, PNG, and WEBP images
 - Automatic optimized image processing
 - Configurable output quality and resizing
 - Strict filename sanitization
-- Manage Photos interface
-- Pagination support for larger galleries
+- Manage Photos interface with pagination
 - Scan Existing Photos support
 - Optional per-gallery watermark support
 - Automatic gallery image indexing
 - Publishing state management
 
----
-
 ### Thumbnail Cache System
-
-New in Version 1.0.11
 
 - Dedicated thumbnail cache architecture
 - Separate thumbnail storage from original gallery images
-- Per-gallery thumbnail settings
-- Global default thumbnail settings
+- Per-gallery thumbnail settings with global defaults
 - Automatic thumbnail generation for newly uploaded images
 - On-demand thumbnail generation for existing galleries
-- Self-healing thumbnail regeneration
-- Thumbnail cache versioning
-- Automatic cleanup support
-- High-traffic deployment friendly
-
-Benefits:
-
-- Faster gallery loading
-- Reduced bandwidth consumption
-- Smaller image payloads
-- Better Core Web Vitals performance
-- Improved Cloudflare and CDN efficiency
-
----
+- Thumbnail cache versioning and staged cleanup
+- High-traffic and Cloudflare/CDN friendly
 
 ### Legacy Gallery Compatibility
 
 - Read-only legacy gallery indexing
 - Supports existing folder-based historical galleries
-- Ideal for migrations from older Joomla gallery workflows
-- No forced ID-based migration
 - Portable path-based gallery references
 - Safe compatibility mode without modifying archive folders
 
----
-
 ### Shortcode Support
-
-DevArt Image Gallery supports portable article shortcodes.
 
 Legacy example:
 
 `{gallery}oldgallery{/gallery}`
 
-Active gallery example:
+Active gallery examples:
 
 `{gallery}galleries2/my-gallery{/gallery}`
 
-This allows clean migration-friendly gallery publishing across Joomla installations.
+`{devartgallery path="galleries2/my-gallery"}`
 
----
+### Content Plugin, Editor Button, and Module
 
-### Joomla Content Plugin
+- Content plugin renders gallery shortcodes in articles
+- Editor button inserts shortcodes from an indexed gallery picker
+- Site module displays galleries in any module position
+- Normal Grid and Masonry layouts
+- Lightweight popup viewer
+- Image limits with safety caps for large folders
 
-- Renders gallery shortcodes directly inside Joomla articles
-- Supports multiple galleries in a single article
-- Lightweight frontend rendering
-- Joomla Page Cache compatible
-- CDN friendly
-- Cloudflare friendly
+### Menu Item Integration
 
----
-
-### Editor Button Integration
-
-- Native Joomla editor button
-- Gallery picker popup
-- Fast shortcode insertion
-- Cleaner editorial workflow
-- No manual shortcode typing required
-
----
-
-### Frontend Module
-
-Display galleries anywhere using Joomla module positions.
-
-Features:
-
-- Gallery selector
-- Normal Grid layout
-- Masonry layout
-- Popup viewer support
-- Image limits
-- Access control support
-- Menu assignment support
-
-Ideal for:
-
-- Homepage blocks
-- Sidebars
-- Landing pages
-- Featured content areas
-
----
-
-### Joomla Menu Item Integration
-
-Create dedicated frontend gallery pages through Joomla menu items.
-
-Ideal for:
-
-- Standalone gallery pages
-- Public gallery archives
-- Visual landing pages
-- Navigation-linked image collections
-
----
-
-### Popup Viewer
-
-- Lightweight popup image viewer
-- No heavy external gallery frameworks
-- Responsive behavior
-- Optional frontend popup mode
-- No filename captions by default
-- Designed to minimize template conflicts
+Create dedicated frontend gallery pages through Joomla menu items with SEF-friendly routing.
 
 ---
 
 ## Included Extensions
 
-This package installs:
+Install the package only. Do not publish standalone extension ZIPs.
 
-- com_devartgallery
-- mod_devartgallery
-- plg_content_devartgallery
-- plg_editors-xtd_devartgallery
+- `com_devartgallery` — administrator component and frontend gallery view
+- `mod_devartgallery` — frontend gallery module
+- `plg_content_devartgallery` — article shortcode renderer
+- `plg_editors-xtd_devartgallery` — editor button for gallery insertion
+
+All extensions update together through `pkg_devartgallery`.
 
 ---
 
 ## Requirements
 
-- Joomla 6.x
-- PHP 8.2+
+- Joomla 6.0+
+- PHP 8.3+
 
 ---
 
 ## Installation
 
-1. Download the latest release from GitHub
-2. Go to:
-
-`System → Extensions → Install`
-
-3. Upload the package ZIP file
-4. Open:
-
-`Components → DevArt Image Gallery`
-
+1. Download `pkg_devartgallery_v1.1.0.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.0)
+2. Go to `System → Install → Extensions`
+3. Upload the package ZIP
+4. Open `Components → DevArt Gallery`
 5. Configure component options
 6. Enable the content plugin, editor button plugin, and module if required
 
@@ -194,194 +124,106 @@ This package installs:
 
 ## Joomla Native Updates
 
-DevArt Image Gallery supports Joomla native updates via GitHub.
+DevArt Gallery uses Joomla native package updates only.
 
-Once installed, future updates are available through:
+Update identity:
 
-`System → Extensions → Update`
+- Element: `pkg_devartgallery`
+- Type: `package`
 
-Update server:
+Update metadata:
 
-`https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/update.xml`
+- Update XML: https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/update.xml
+- Changelog: https://raw.githubusercontent.com/devartgr/joomla-devart-gallery/main/changelog.xml
+
+Once installed, later updates appear under:
+
+`System → Update → Extensions`
+
+Existing sites on older releases should install the `1.1.0` package ZIP once. Later versions are found by Joomla Update.
 
 ---
 
 ## Recommended Workflow
 
-### For New Galleries
+### New Galleries
 
 1. Configure Active Gallery Directory
-2. Create a new gallery
-3. Upload images
-4. Thumbnails are generated automatically
-5. Manage gallery photos
-6. Insert gallery into article, module, or menu item
-7. Publish
+2. Create a gallery and upload images
+3. Thumbnails generate automatically on upload
+4. Insert via article shortcode, module, or menu item
 
----
+### Existing Active Galleries
 
-### For Existing Active Galleries
+1. Update to 1.1.0
+2. No forced migration
+3. Thumbnail cache builds on first frontend access if missing
 
-1. Upgrade to Version 1.0.11
-2. No migration required
-3. Thumbnail cache is created automatically when galleries are first accessed
-4. Existing galleries continue to function normally
-
----
-
-### For Legacy Migration
+### Legacy Migration
 
 1. Configure Legacy Archive Directory
 2. Rebuild Legacy Index
-3. Verify indexed galleries
-4. Continue using existing shortcodes
-5. Thumbnail cache is created automatically only when galleries are requested
+3. Keep existing shortcodes
+4. Legacy galleries remain read-only in the administrator hub
 
 ---
 
 ## Security Highlights
 
-- Joomla ACL permissions support
+- Joomla ACL permissions with custom actions
 - CSRF protection for administrator actions
-- SQL injection protection through Joomla database APIs
-- XSS-safe frontend rendering
-- Path traversal protection
+- Path traversal protection and hardened gallery path checks
+- Upload size, dimension, and pixel-count validation
 - Strict filename policy
-- Safe legacy archive compatibility
-- GPL licensed
-- JED-ready packaging
+- XSS-safe frontend rendering
+- Keep Data on Uninstall option
 
 ---
 
 ## Performance
 
-Built for production environments.
-
-Features include:
-
 - Thumbnail cache system
-- Lightweight frontend rendering
-- Minimal JavaScript footprint
-- Minimal CSS footprint
-- No unnecessary frontend libraries
+- Lightweight frontend CSS/JS
+- No jQuery or heavy frontend frameworks
 - Pagination for photo management
-- Optimized query patterns
 - Controlled indexing operations
-- Joomla Page Cache friendly
-- CDN friendly
-- Cloudflare compatible
-- High-traffic deployment friendly
-- Progressive thumbnail generation
-- Automatic thumbnail cache rebuilding
-- Reduced frontend image payloads
+- Frontend image caps for module and content plugin
+- Joomla Page Cache / Cloudflare friendly
 
 ---
 
-## Compatibility Notes
+## Compatibility
 
 Supported:
 
 - Joomla 6.x
-- PHP 8.2+
-- Joomla native update system
-- Modern Joomla MVC architecture
+- PHP 8.3+
 
 Not supported:
 
-- Joomla 3
-- Joomla 4
-- Joomla 5
-- Legacy PHP versions
+- Joomla 3 / 4 / 5
+- PHP 8.2 or earlier
 
 ---
 
 ## Current Version
 
-1.0.11
+**1.1.0**
 
----
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.0
 
-## Changelog 1.0.11
+Package SHA-256:
 
-### Added
-
-- Thumbnail cache system
-- Per-gallery thumbnail settings
-- Global default thumbnail settings
-- Dedicated thumbnail storage
-- Automatic thumbnail generation
-- On-demand thumbnail generation
-- Missing thumbnail auto-rebuild
-- Thumbnail cache retention controls
-- Thumbnail cache versioning
-
-### Improved
-
-- Gallery frontend performance
-- Bandwidth usage
-- Cloudflare compatibility
-- CDN efficiency
-- Scalability for large galleries
-- High-traffic deployment readiness
-
-### Notes
-
-- No database schema changes
-- No migration required
-- Existing galleries are not processed during upgrade
-- Thumbnail cache is built progressively as galleries are accessed
-
----
-
-## Production Recommendations
-
-Recommended defaults:
-
-Thumbnail Cache:
-
-- Enabled
-- WEBP format
-- 400x350 thumbnails
-- Crop mode
-- 180-day retention
-
-Frontend:
-
-- Popup enabled
-- Lazy loading enabled
-- Responsive columns enabled
-- Normal Grid or Masonry based on design
-
-Uploads:
-
-- Strict filename policy enabled
-- Optimized output sizing
-- Safe upload size limits
-
-Migration:
-
-- Use Legacy mode only for archive compatibility
-- Use Active galleries for all new content
-
----
-
-## Known Notes
-
-- Existing Active and Legacy galleries build thumbnail cache only when first requested
-- New gallery uploads generate thumbnails automatically
-- Always test template compatibility and caching behavior before full production rollout
+`8388b2616258952f79ebffc3c761af30e180a8ce197ad9bd48dadc606cd7c206`
 
 ---
 
 ## Author
 
-Kostas Stathopoulos  
-DevArt  
-https://devart.gr/
+Kostas Stathopoulos — DevArt  
+https://devart.gr
 
-GitHub Repository:
-
-https://github.com/devartgr/joomla-devart-gallery
+Repository: https://github.com/devartgr/joomla-devart-gallery
 
 ---
 
@@ -399,4 +241,4 @@ Always test on a staging environment before using in production.
 
 ## License
 
-GNU General Public License v3 or later
+GNU General Public License version 3 or later
