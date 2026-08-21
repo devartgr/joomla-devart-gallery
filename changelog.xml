@@ -1,181 +1,221 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <changelogs>
 
     <changelog>
-        <element>com_devartgallery</element>
-        <type>component</type>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
+        <version>1.1.0</version>
+        <addition>
+            <item>Packaged language packs for el-GR, fr-FR, de-DE, es-ES, it-IT, and pt-PT.</item>
+            <item>Gallery hub with Overview, Photos, and Settings tabs for active galleries.</item>
+            <item>Package-only GitHub update channel at repository root (pkg_devartgallery).</item>
+        </addition>
+        <change>
+            <item>Administrator Galleries, Index, and Dashboard rebuilt to match DevArt Widgets responsive pattern.</item>
+            <item>Simplified Galleries list; path/shortcode/integration details moved into Overview.</item>
+            <item>Legacy galleries open read-only in the hub.</item>
+            <item>Module image limit default is 24; limit 0 applies a safety cap of 200 (max 500).</item>
+            <item>Content plugin hard-caps rendered images at 60 for large legacy folders.</item>
+            <item>Rate-limited on-demand thumbnail cache cleanup during frontend rendering.</item>
+        </change>
+        <fix>
+            <item>Security and ACL hardening for admin mutations, custom actions with core fallbacks, and path checks.</item>
+            <item>Enforced max_images_per_gallery on uploads and scan-existing imports.</item>
+            <item>Upload dimension and pixel-count validation.</item>
+            <item>Replaced GLOB_BRACE folder scans with portable Folder::files().</item>
+            <item>Admin pagination fixed with plain GET links; site SEF router for Gallery menu items.</item>
+            <item>Hardened legacy read-only enforcement when POST gallery_id is used without query context.</item>
+            <item>JED Checker language quoting; removed duplicate package language files.</item>
+            <item>Localized remaining raw English upload failure messages.</item>
+            <item>Replaced Factory::getDbo() in admin controllers with DatabaseDriver from the DI container.</item>
+            <item>Removed obsolete imagedestroy() calls; added declare(strict_types=1) to module and content plugin.</item>
+        </fix>
+        <note>
+            <item>Public minor release after baseline 1.0.11. Intermediate local builds are not published separately.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Install and update only through pkg_devartgallery.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.0.11</version>
-
+        <fix>
+            <item>Fixed New Gallery model architecture by switching NewgalleryModel to Joomla
+                AdminModel form workflow.</item>
+            <item>Fixed New Gallery save validation workflow.</item>
+            <item>Fixed Joomla toolbar Back/Cancel button by using adminForm-compatible markup and
+                gallery.cancel task.</item>
+            <item>Added missing COM_DEVARTGALLERY_ALIAS language string.</item>
+        </fix>
         <addition>
-            <item>Added thumbnail cache system for improved frontend gallery performance</item>
-            <item>Added dedicated thumbnail folders per gallery</item>
-            <item>Added per-gallery thumbnail width and height settings</item>
-            <item>Added global default thumbnail settings for newly created galleries</item>
-            <item>Added thumbnail generation during new gallery photo upload workflow</item>
-            <item>Added on-demand thumbnail generation for existing Active galleries</item>
-            <item>Added on-demand thumbnail generation for existing Legacy galleries</item>
-            <item>Added automatic missing thumbnail regeneration support</item>
-            <item>Added thumbnail cache versioning based on gallery thumbnail settings</item>
-            <item>Added thumbnail retention and cleanup settings</item>
+            <item>Added per-gallery thumbnail cache settings with default values from component
+                Options.</item>
+            <item>Added frontend on-demand thumbnail generation for active and legacy galleries.</item>
+            <item>Added thumbnail creation during new gallery/photo uploads from the administrator.</item>
+            <item>Added versioned thumbnail folders per gallery and per thumbnail setting hash.</item>
+            <item>Added staged thumbnail cleanup settings for old cache versions.</item>
         </addition>
-
         <change>
-            <item>Improved gallery grid performance by serving optimized thumbnails instead of larger gallery images</item>
-            <item>Improved bandwidth usage for image-heavy gallery pages</item>
-            <item>Improved scalability for large Joomla gallery installations</item>
-            <item>Improved Cloudflare and CDN friendliness for gallery frontend rendering</item>
-            <item>Improved filesystem organization by separating original gallery images from generated thumbnails</item>
-            <item>Improved self-healing behavior when thumbnail files are missing</item>
-            <item>Existing Active and Legacy galleries now build thumbnail cache progressively only when requested on the frontend</item>
-            <item>New gallery uploads now create thumbnails during save/upload operations</item>
+            <item>Gallery grid images now use lightweight generated thumbnails when available, while
+                popup/full image links continue to use the optimized original image.</item>
+            <item>Existing active and legacy galleries do not generate thumbnails during
+                installation/update; thumbnails are created only when the gallery is requested.</item>
+            <item>Changing thumbnail settings for one gallery clears only that gallery thumbnail
+                cache.</item>
         </change>
-
         <note>
-            <item>Performance-focused release for high-traffic and image-heavy Joomla websites</item>
-            <item>Existing galleries are not processed during installation or upgrade</item>
-            <item>No mass thumbnail generation is performed during update</item>
-            <item>Thumbnail cache is created progressively as galleries are accessed</item>
-            <item>No database schema changes introduced</item>
-            <item>No migration process required</item>
-            <item>Recommended update for all DevArt Gallery installations</item>
+            <item>No mass thumbnail regeneration is performed during update.</item>
+            <item>Thumbnail cache path:
+                media/com_devartgallery/thumbs/gallery-{id}/{settings-hash}/.</item>
+            <item>No redesign. No frontend shortcode, module, content plugin, editor button, or
+                legacy indexing logic changes in the hotfix portion of this release.</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartgallery</element>
-        <type>component</type>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.0.10</version>
-
         <fix>
-            <item>Fixed critical Joomla 6 administrator fatal error in New Gallery workflow caused by incorrect model architecture</item>
-            <item>Fixed New Gallery model to use proper Joomla AdminModel form workflow</item>
-            <item>Fixed broken gallery save workflow for newly created galleries</item>
-            <item>Fixed broken administrator Back / Cancel toolbar behavior in New Gallery view</item>
-            <item>Fixed missing administrator language string COM_DEVARTGALLERY_ALIAS</item>
+            <item>Fixed critical Joomla 6 administrator fatal error in New Gallery workflow caused
+                by incorrect model architecture.</item>
+            <item>Fixed New Gallery model to use proper Joomla AdminModel form workflow.</item>
+            <item>Fixed broken gallery save workflow for newly created galleries.</item>
+            <item>Fixed broken administrator Back / Cancel toolbar behavior in New Gallery view.</item>
+            <item>Fixed missing administrator language string COM_DEVARTGALLERY_ALIAS.</item>
         </fix>
-
         <change>
-            <item>Improved Joomla 6 administrator form compatibility for gallery creation workflow</item>
-            <item>Improved production stability for administrator gallery management</item>
-            <item>Improved reliability of New Gallery create/save operations</item>
+            <item>Improved Joomla 6 administrator form compatibility for gallery creation workflow.</item>
+            <item>Improved production stability for administrator gallery management.</item>
+            <item>Improved reliability of New Gallery create/save operations.</item>
         </change>
-
         <note>
-            <item>Critical production hotfix release</item>
-            <item>Recommended update for all DevArt Gallery v1.0.9 installations</item>
-            <item>No frontend behavior changes or feature modifications in this release</item>
+            <item>Critical production hotfix release.</item>
+            <item>Recommended update for all DevArt Gallery v1.0.9 installations.</item>
+            <item>No frontend behavior changes or feature modifications in this release.</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartgallery</element>
-        <type>component</type>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.0.9</version>
-
         <fix>
-            <item>Fixed component configuration parameter handling when Joomla stores component params in nested JSON format</item>
-            <item>Fixed Dashboard showing fallback or incorrect gallery paths instead of configured values</item>
-            <item>Fixed Legacy Archive Directory display inconsistencies in administrator dashboard</item>
-            <item>Fixed Active Gallery Directory display inconsistencies in administrator dashboard</item>
-            <item>Fixed Legacy Index rebuild using incorrect directory values in specific installations</item>
-            <item>Fixed Active Index rebuild using incorrect directory values in specific installations</item>
-            <item>Fixed indexing behavior when configuration values were correctly saved but incorrectly read by internal component logic</item>
+            <item>Fixed component configuration parameter handling when Joomla stores component
+                params in nested JSON format.</item>
+            <item>Fixed Dashboard showing fallback or incorrect gallery paths instead of configured
+                values.</item>
+            <item>Fixed Legacy Archive Directory display inconsistencies in the administrator
+                dashboard.</item>
+            <item>Fixed Active Gallery Directory display inconsistencies in the administrator
+                dashboard.</item>
+            <item>Fixed Legacy Index rebuild using incorrect directory values in specific
+                installations.</item>
+            <item>Fixed Active Index rebuild using incorrect directory values in specific
+                installations.</item>
+            <item>Fixed indexing behavior when configuration values were correctly saved but
+                incorrectly read by internal component logic.</item>
+            <item>Fixed component options path handling for Legacy Archive Directory.</item>
+            <item>Fixed component options path handling for Active Gallery Directory.</item>
+            <item>Fixed legacy index rebuild using incorrect base directory when custom path was
+                configured.</item>
+            <item>Fixed active gallery operations using fallback paths in some workflows.</item>
         </fix>
-
         <change>
-            <item>Improved compatibility with different Joomla component parameter storage behaviors</item>
-            <item>Improved dashboard configuration accuracy across installations</item>
-            <item>Improved gallery indexing reliability for production environments</item>
-            <item>Improved migration safety for legacy gallery deployments</item>
-            <item>Improved internal configuration loading consistency</item>
+            <item>Improved compatibility with different Joomla component parameter storage
+                behaviors.</item>
+            <item>Improved dashboard configuration accuracy across installations.</item>
+            <item>Improved gallery indexing reliability for production environments.</item>
+            <item>Improved migration safety for legacy gallery deployments.</item>
+            <item>Improved internal configuration loading consistency.</item>
+            <item>Improved path consistency across Dashboard, Galleries, New Gallery, Manage Photos,
+                Scan Existing Photos, delete safety checks and frontend shortcode resolving.</item>
         </change>
-
         <note>
-            <item>This release focuses on configuration reliability, indexing stability and production consistency</item>
-            <item>Recommended update for all previous DevArt Gallery releases</item>
+            <item>This release focuses on configuration reliability, indexing stability and
+                production consistency.</item>
+            <item>Recommended update for all previous DevArt Gallery releases.</item>
+            <item>First production release for Joomla 6 with active managed galleries, legacy
+                gallery indexing, content plugin, editor button plugin, frontend module, popup
+                viewer, strict filename policy, ACL and Keep Data on Uninstall option.</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartgallery</element>
-        <type>component</type>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.0.4</version>
-
         <fix>
-            <item>Fixed Legacy Archive Directory custom path handling when changed from default values</item>
-            <item>Fixed Active Gallery Directory custom path handling when changed from default values</item>
-            <item>Fixed dashboard directory cards showing incorrect default paths after configuration changes</item>
-            <item>Fixed Legacy Index rebuild ignoring custom Legacy Archive Directory settings</item>
-            <item>Fixed Active Index rebuild ignoring custom Active Gallery Directory settings</item>
-            <item>Fixed legacy indexing conflicts when Legacy Archive Directory includes the Active Gallery Directory</item>
+            <item>Fixed Legacy Archive Directory custom path handling when changed from default
+                values.</item>
+            <item>Fixed Active Gallery Directory custom path handling when changed from default
+                values.</item>
+            <item>Fixed dashboard directory cards showing incorrect default paths after
+                configuration changes.</item>
+            <item>Fixed Legacy Index rebuild ignoring custom Legacy Archive Directory settings.</item>
+            <item>Fixed Active Index rebuild ignoring custom Active Gallery Directory settings.</item>
+            <item>Fixed legacy indexing conflicts when Legacy Archive Directory includes the Active
+                Gallery Directory.</item>
         </fix>
-
         <change>
-            <item>Improved path normalization and component parameter loading consistency</item>
-            <item>Improved migration safety when legacy galleries are indexed from broader directories</item>
-            <item>Improved dashboard accuracy for custom gallery path deployments</item>
-            <item>Improved Joomla Update metadata consistency for production releases</item>
+            <item>Improved path normalization and component parameter loading consistency.</item>
+            <item>Improved migration safety when legacy galleries are indexed from broader
+                directories.</item>
+            <item>Improved dashboard accuracy for custom gallery path deployments.</item>
+            <item>Improved Joomla Update metadata consistency for production releases.</item>
         </change>
-
         <note>
-            <item>This release focused on custom path handling, indexing reliability and migration safety</item>
-            <item>Recommended update for users of earlier initial releases</item>
+            <item>This release focused on custom path handling, indexing reliability and migration
+                safety.</item>
+            <item>Recommended update for users of earlier initial releases.</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartgallery</element>
-        <type>component</type>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.0.0</version>
-
         <addition>
-            <item>Added full Joomla 6 native DevArt Image Gallery component with modern MVC architecture</item>
-            <item>Added active managed gallery system</item>
-            <item>Added legacy gallery indexing with read-only compatibility support</item>
-            <item>Added portable path-based shortcode support for legacy and active galleries</item>
-            <item>Added frontend gallery display module</item>
-            <item>Added content plugin for article gallery rendering</item>
-            <item>Added editor button for easy gallery shortcode insertion</item>
-            <item>Added popup image viewer support</item>
-            <item>Added responsive frontend gallery layouts</item>
-            <item>Added Normal Grid and Masonry frontend display modes</item>
-            <item>Added gallery management interface</item>
-            <item>Added Manage Photos interface with pagination</item>
-            <item>Added Scan Existing Photos support</item>
-            <item>Added automatic image indexing system</item>
-            <item>Added support for JPG, PNG and WEBP image uploads</item>
-            <item>Added automatic image optimization workflow</item>
-            <item>Added strict filename sanitization policy</item>
-            <item>Added optional watermark support per gallery</item>
-            <item>Added Joomla menu item integration for direct gallery frontend pages</item>
-            <item>Added Joomla ACL permissions support</item>
-            <item>Added Keep Data on Uninstall option</item>
-            <item>Added GitHub-based Joomla update server support</item>
+            <item>Added full Joomla 6 native DevArt Image Gallery component with modern MVC
+                architecture.</item>
+            <item>Added active managed gallery system.</item>
+            <item>Added legacy gallery indexing with read-only compatibility support.</item>
+            <item>Added portable path-based shortcode support for legacy and active galleries.</item>
+            <item>Added frontend gallery display module.</item>
+            <item>Added content plugin for article gallery rendering.</item>
+            <item>Added editor button for easy gallery shortcode insertion.</item>
+            <item>Added popup image viewer support.</item>
+            <item>Added responsive frontend gallery layouts.</item>
+            <item>Added Normal Grid and Masonry frontend display modes.</item>
+            <item>Added gallery management interface.</item>
+            <item>Added Manage Photos interface with pagination.</item>
+            <item>Added Scan Existing Photos support.</item>
+            <item>Added automatic image indexing system.</item>
+            <item>Added support for JPG, PNG and WEBP image uploads.</item>
+            <item>Added automatic image optimization workflow.</item>
+            <item>Added strict filename sanitization policy.</item>
+            <item>Added optional watermark support per gallery.</item>
+            <item>Added Joomla menu item integration for direct gallery frontend pages.</item>
+            <item>Added Joomla ACL permissions support.</item>
+            <item>Added Keep Data on Uninstall option.</item>
+            <item>Added GitHub-based Joomla update server support.</item>
         </addition>
-
         <change>
-            <item>Gallery architecture designed specifically for Joomla 6 and PHP 8.2+</item>
-            <item>Legacy gallery compatibility implemented without modifying historical gallery folders</item>
-            <item>Frontend rendering kept lightweight to minimize template conflicts</item>
-            <item>CSS and JavaScript namespaced for safer third-party compatibility</item>
-            <item>Manage Photos optimized with pagination for larger galleries</item>
-            <item>Gallery indexing optimized for controlled batch operations</item>
-            <item>Modern service provider and MVCComponent architecture used throughout</item>
+            <item>Gallery architecture designed specifically for Joomla 6 and PHP 8.3+.</item>
+            <item>Legacy gallery compatibility implemented without modifying historical gallery
+                folders.</item>
+            <item>Frontend rendering kept lightweight to minimize template conflicts.</item>
+            <item>CSS and JavaScript namespaced for safer third-party compatibility.</item>
+            <item>Manage Photos optimized with pagination for larger galleries.</item>
+            <item>Gallery indexing optimized for controlled batch operations.</item>
+            <item>Modern service provider and MVCComponent architecture used throughout.</item>
         </change>
-
-        <security>
-            <item>Added SQL injection protection using Joomla database APIs and parameterized queries</item>
-            <item>Added XSS protection through proper output escaping</item>
-            <item>Added CSRF protection for administrator actions</item>
-            <item>Added path traversal protection for filesystem operations</item>
-            <item>Added strict filename validation for safer uploads</item>
-            <item>Added ACL enforcement for administrator operations</item>
-        </security>
-
         <note>
-            <item>Initial public release of DevArt Image Gallery for Joomla 6</item>
-            <item>Designed for editorial, news and high-traffic Joomla websites</item>
-            <item>Always test on a staging environment before production deployment</item>
+            <item>Initial public release of DevArt Gallery for Joomla 6.</item>
+            <item>Designed for editorial, news and high-traffic Joomla websites.</item>
+            <item>Always test on a staging environment before production deployment.</item>
         </note>
     </changelog>
 
