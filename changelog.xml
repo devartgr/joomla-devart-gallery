@@ -4,6 +4,24 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.1.1</version>
+        <addition>
+            <item>Added packaged language packs for cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, and zh-CN.</item>
+        </addition>
+        <change>
+            <item>Administrator Dashboard rebuilt with Slider-style action cards for New Gallery, Galleries, and Options.</item>
+            <item>Galleries Index remains as a secondary action above the existing dashboard statistics and info panels.</item>
+            <item>Language generator uses Argos offline translation with strict printf placeholder protection.</item>
+        </change>
+        <note>
+            <item>Admin UI polish and translations. No database schema changes.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.1.0</version>
         <addition>
             <item>Packaged language packs for el-GR, fr-FR, de-DE, es-ES, it-IT, and pt-PT.</item>
