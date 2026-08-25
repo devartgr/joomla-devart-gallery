@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.0-orange)
+![Release](https://img.shields.io/badge/Version-1.1.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,19 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.1.0** is a public minor release after baseline **1.0.11**. It adds a Widgets-aligned administrator UI, gallery hub workflow, packaged languages, package-only update ownership, and security/performance hardening.
+Version **1.1.1** builds on **1.1.0** with a Slider-style administrator Dashboard hub and expanded packaged languages (15 locales total).
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.1.1
+
+- Administrator Dashboard rebuilt with Slider-style action cards (New Gallery, Galleries, Options)
+- Galleries Index remains as a secondary action above stats and info panels
+- Eight new packaged languages: Czech, Dutch, Polish, Russian, Ukrainian, Japanese, Turkish, Chinese (Simplified)
+- Fifteen locales total (including Greek, French, German, Spanish, Italian, Portuguese, and English)
+- Offline Argos translation pipeline with placeholder-safe gap fill
 
 ---
 
@@ -113,7 +123,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.1.0.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.0)
+1. Download `pkg_devartgallery_v1.1.1.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.1)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -140,7 +150,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on older releases should install the `1.1.0` package ZIP once. Later versions are found by Joomla Update.
+Existing sites on older releases should install the latest package ZIP once if needed. Later versions are found by Joomla Update.
 
 ---
 
@@ -155,7 +165,7 @@ Existing sites on older releases should install the `1.1.0` package ZIP once. La
 
 ### Existing Active Galleries
 
-1. Update to 1.1.0
+1. Update to 1.1.1
 2. No forced migration
 3. Thumbnail cache builds on first frontend access if missing
 
@@ -208,13 +218,13 @@ Not supported:
 
 ## Current Version
 
-**1.1.0**
+**1.1.1**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.0
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.1
 
 Package SHA-256:
 
-`8388b2616258952f79ebffc3c761af30e180a8ce197ad9bd48dadc606cd7c206`
+`1efc94d7ba5229c74e4800f67d7a645d5bc55ae41909dfa47e60c85359a145fe`
 
 ---
 
