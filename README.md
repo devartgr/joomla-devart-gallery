@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.2-orange)
+![Release](https://img.shields.io/badge/Version-1.1.3-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,19 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.1.2** is a hotfix after **1.1.1**. It fixes the administrator Galleries SQL error on upgraded or reinstall-over-existing-table sites.
+Version **1.1.3** is a follow-up hotfix after **1.1.2**. It consolidates schema migration hardening and Active index rebuild fixes for sites that updated to an early 1.1.2 build.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.1.3
+
+- Follow-up hotfix for sites that updated to an early 1.1.2 build before schema and Active index rebuild fixes were complete
+- Consolidates galleries/index schema migration hardening and Active index rebuild fixes
+- Active index rebuild indexes first-level folders on disk even when managed gallery rows cannot be created yet
+- Improved Active directory path resolution and clearer zero-result diagnostics
+- Recommended update for all 1.1.2 installations; run **Rebuild Active Index** once after update
 
 ---
 
@@ -25,7 +35,7 @@ Built specifically for Joomla 6 and PHP 8.3+.
 
 - Added installer migration for the missing `galleries.description` column
 - Fixed administrator Galleries view error: `Unknown column 'g.description' in 'SELECT'`
-- Hotfix only. No other functional changes
+- Hardened schema migration with preflight execution and fallback ALTER statements
 
 ---
 
@@ -131,7 +141,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.1.2.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.2)
+1. Download `pkg_devartgallery_v1.1.3.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.3)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -158,7 +168,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on older releases should install the latest package ZIP once if needed. Later versions are found by Joomla Update.
+Existing sites on 1.1.2 should update through Joomla Update to 1.1.3, then run **Rebuild Active Index** once.
 
 ---
 
@@ -173,8 +183,8 @@ Existing sites on older releases should install the latest package ZIP once if n
 
 ### Existing Active Galleries
 
-1. Update to 1.1.2
-2. No forced migration
+1. Update to 1.1.3
+2. Run **Rebuild Active Index** once from Galleries Index
 3. Thumbnail cache builds on first frontend access if missing
 
 ### Legacy Migration
@@ -226,13 +236,13 @@ Not supported:
 
 ## Current Version
 
-**1.1.2**
+**1.1.3**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.2
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.3
 
 Package SHA-256:
 
-`505556aba8c159d50e5106e26048aa961b506d4468e2421fd9ea7b3686614a59`
+`725d9d630a3c78924646fce71492426e489322adcdece71fe3ca03bbb4700ec7`
 
 ---
 
