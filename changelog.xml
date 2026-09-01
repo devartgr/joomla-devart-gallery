@@ -8,6 +8,7 @@
         <fix>
             <item>Added installer migration for the missing galleries.description column on upgraded or reinstall-over-existing-table sites.</item>
             <item>Fixed administrator Galleries view SQL error: Unknown column g.description in SELECT.</item>
+            <item>Hardened schema migration with preflight execution and fallback ALTER statements.</item>
         </fix>
         <note>
             <item>Hotfix release. No other functional changes.</item>
