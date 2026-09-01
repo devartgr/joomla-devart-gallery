@@ -6,12 +6,12 @@
         <element>pkg_devartgallery</element>
         <type>package</type>
         <client>site</client>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
         <infourl title="DevArt Gallery">https://github.com/devartgr/joomla-devart-gallery</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v1.1.2/pkg_devartgallery_v1.1.2.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v1.1.3/pkg_devartgallery_v1.1.3.zip</downloadurl>
         </downloads>
-        <sha256>f0603a882adcb606e059e2bee55aedc5490f6d95d36a39bc5609ac83e5f4cd97</sha256>
+        <sha256>725d9d630a3c78924646fce71492426e489322adcdece71fe3ca03bbb4700ec7</sha256>
         <tags>
             <tag>stable</tag>
         </tags>
