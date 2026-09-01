@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.1-orange)
+![Release](https://img.shields.io/badge/Version-1.1.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,17 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.1.1** builds on **1.1.0** with a Slider-style administrator Dashboard hub and expanded packaged languages (15 locales total).
+Version **1.1.2** is a hotfix after **1.1.1**. It fixes the administrator Galleries SQL error on upgraded or reinstall-over-existing-table sites.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.1.2
+
+- Added installer migration for the missing `galleries.description` column
+- Fixed administrator Galleries view error: `Unknown column 'g.description' in 'SELECT'`
+- Hotfix only. No other functional changes
 
 ---
 
@@ -123,7 +131,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.1.1.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.1)
+1. Download `pkg_devartgallery_v1.1.2.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.2)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -165,7 +173,7 @@ Existing sites on older releases should install the latest package ZIP once if n
 
 ### Existing Active Galleries
 
-1. Update to 1.1.1
+1. Update to 1.1.2
 2. No forced migration
 3. Thumbnail cache builds on first frontend access if missing
 
@@ -218,13 +226,13 @@ Not supported:
 
 ## Current Version
 
-**1.1.1**
+**1.1.2**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.1
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.2
 
 Package SHA-256:
 
-`1efc94d7ba5229c74e4800f67d7a645d5bc55ae41909dfa47e60c85359a145fe`
+`505556aba8c159d50e5106e26048aa961b506d4468e2421fd9ea7b3686614a59`
 
 ---
 
