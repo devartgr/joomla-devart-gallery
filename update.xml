@@ -11,7 +11,7 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-gallery/releases/download/v1.1.2/pkg_devartgallery_v1.1.2.zip</downloadurl>
         </downloads>
-        <sha256>517186739be229d8d16d670a4b806d60a7904a0d9774d51ac24d5f22ab032ad0</sha256>
+        <sha256>ec83ec1bf28e9c790da83877ee6b7ccd7ff7bb69aa74acd2109413b8d0bf9c8d</sha256>
         <tags>
             <tag>stable</tag>
         </tags>
