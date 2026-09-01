@@ -4,6 +4,20 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.1.2</version>
+        <fix>
+            <item>Added installer migration for the missing galleries.description column on upgraded or reinstall-over-existing-table sites.</item>
+            <item>Fixed administrator Galleries view SQL error: Unknown column g.description in SELECT.</item>
+        </fix>
+        <note>
+            <item>Hotfix release. No other functional changes.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.1.1</version>
         <addition>
             <item>Added packaged language packs for cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, and zh-CN.</item>
