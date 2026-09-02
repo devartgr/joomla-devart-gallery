@@ -4,6 +4,28 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.1.4</version>
+        <fix>
+            <item>Fixed Active gallery hub failing to open for upload, scan, and settings when opened through the Galleries list or index_id route.</item>
+            <item>Fixed InvalidArgumentException in managed gallery materialization (ParameterType::INTEGER instead of PDO::PARAM_INT).</item>
+            <item>Fixed Active galleries incorrectly shown as Legacy read-only when materialization failed.</item>
+            <item>Fixed upload and Scan Existing Photos returning No Gallery Selected or Invalid request when the managed gallery id was not posted correctly.</item>
+            <item>Fixed legacy gallery photo pagination dropping index_id and id from page links.</item>
+            <item>Fixed Joomla 6 Folder::files() signature misuse causing count(): true given fatal errors on legacy gallery photo lists.</item>
+            <item>Fixed materialization on upgraded sites with legacy required relative_path column.</item>
+            <item>Fixed empty gallery alias fallback for upload filenames on upgraded managed galleries.</item>
+            <item>Galleries Index no longer opens gallery edit links; use the Galleries view instead.</item>
+        </fix>
+        <note>
+            <item>Recommended update for all 1.1.3 installations, especially when Active galleries open read-only or upload/scan fails.</item>
+            <item>After update, run Rebuild Active Index once if galleries were previously unlinked.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.1.3</version>
         <fix>
             <item>Follow-up hotfix for sites that updated to an early 1.1.2 build before schema and Active index rebuild fixes were complete.</item>
