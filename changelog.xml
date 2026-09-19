@@ -4,6 +4,45 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.0</version>
+        <addition>
+            <item>Administrator Tools submenu and hub (Settings and Options cards, shared Galleries Index header banner).</item>
+            <item>Dedicated Settings screen: Frontend Display and Thumbnail Cache (aspect ratio, popup caption/counter, hover zoom/rise/color overlay with colour and opacity, drop shadow, border).</item>
+            <item>Tools action to clean the thumbnail cache; thumbnails regenerate on demand.</item>
+            <item>Tools card that opens Module Manager filtered to mod_devartgallery.</item>
+            <item>Module gallery field uses Joomla ModalSelect (portable path, not database ID).</item>
+            <item>Module Default grid inherits Settings with Use Global overrides; Masonry disabled when Thumbnail Cache is Fixed size.</item>
+            <item>Module Slider layout: single row, Settings thumb size, arrows, gap, autoplay (ms), loop, hover overlay.</item>
+            <item>Module Showcase panels layout: 3–6 visible panels, narrow/wide hover expand, active-only colour, optional gap.</item>
+            <item>Module Stage layout: main image + thumb strip, arrows, loop.</item>
+            <item>Module optional Thumbnail Mode / Width / Height override (separate thumb cache hash per size).</item>
+            <item>Module Full width option and Gallery Display tab.</item>
+            <item>Slider and Stage dedicated image limits (default 20, max 48).</item>
+            <item>Options Paths: Joomla Media folder picker for Legacy and Active base folders.</item>
+            <item>Full language packs regenerated for all supported locales (machine translation; Greek curated).</item>
+        </addition>
+        <change>
+            <item>Dashboard Options card opens the Tools hub.</item>
+            <item>Joomla Options keep Paths &amp; Migration, Upload Processing, Thumbnail Format/Quality/Retention/Cleanup, Uninstall, and Permissions.</item>
+            <item>Frontend Display and Thumbnail Cache controls moved from Options into Settings.</item>
+            <item>Aspect ratio applies only when Thumbnail Cache is Off.</item>
+            <item>Masonry requires Thumbnail Mode Width only; Fixed size forces Normal grid (module override can enable Width only for Masonry).</item>
+            <item>Module Image Limit default is 100 (minimum 1); legacy 0 still caps at 200.</item>
+            <item>Slider arrows are white on a black background for contrast.</item>
+            <item>Options Media picker values (local-images:/…) are normalised to portable images/… paths.</item>
+            <item>Module Thumbnail Mode Use Global fully inherits Settings (ignores leftover width/height overrides).</item>
+            <item>Cleaned legacy menu links so SEF URLs are /alias instead of /alias?gallery_id=N.</item>
+        </change>
+        <note>
+            <item>Galleries stay layout-agnostic; no component template packs. Module owns extra presentation modes; shortcodes and menu galleries stay simple.</item>
+            <item>Settings and Options both store values in component params.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.1.5</version>
         <addition>
             <item>Added Thumbnail Mode Width only (proportional height) for masonry-friendly thumbnail cache.</item>

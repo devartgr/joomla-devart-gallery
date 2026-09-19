@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.5-orange)
+![Release](https://img.shields.io/badge/Version-1.2.0-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,21 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.1.5** adds Thumbnail Mode **Width only** for masonry-friendly cache, restores Options inheritance for galleries and menu items, and fixes menu Display overrides blocking Options Masonry on component gallery pages.
+Version **1.2.0** adds an administrator Tools hub with dedicated Settings, new module layouts (Slider, Showcase panels, Stage), Options Media path pickers, and a full language pack refresh.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.0
+
+- Administrator **Tools** hub with dedicated **Settings** (Frontend Display + Thumbnail Cache)
+- Settings hover styles: zoom, rise, color overlay (colour/opacity), drop shadow, border
+- Module layouts: **Slider**, **Showcase panels**, **Stage** (plus Default grid inheriting Settings)
+- Module thumb override, Full width, Gallery Display tab; Slider/Stage dedicated image limits
+- Options Paths: Joomla Media folder picker for Legacy and Active directories
+- Path normalisation for Media picker values; Use Global thumb mode fully inherits Settings
+- Full language packs regenerated for all supported locales (machine translation; Greek curated)
 
 ---
 
@@ -100,6 +112,13 @@ Built specifically for Joomla 6 and PHP 8.3+.
 - Automatic gallery image indexing
 - Publishing state management
 
+### Tools and Settings
+
+- Administrator Tools hub with Settings and Options cards
+- Dedicated Settings for Frontend Display and Thumbnail Cache
+- Options keep Paths & Migration, Upload Processing, thumbnail format/quality/retention, Uninstall, and Permissions
+- Media folder pickers for Legacy and Active gallery directories
+
 ### Thumbnail Cache System
 
 - Dedicated thumbnail cache architecture
@@ -134,9 +153,10 @@ Active gallery examples:
 - Content plugin renders gallery shortcodes in articles
 - Editor button inserts shortcodes from an indexed gallery picker
 - Site module displays galleries in any module position
-- Normal Grid and Masonry layouts
-- Lightweight popup viewer
-- Image limits with safety caps for large folders
+- Module layouts: Default grid (Settings inherit), Slider, Showcase panels, Stage
+- Normal Grid and Masonry for Default grid; lightweight popup viewer
+- Optional module thumbnail size override; Full width display
+- Image limits with safety caps; dedicated smaller limits for Slider and Stage
 
 ### Menu Item Integration
 
@@ -166,7 +186,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.1.5.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.5)
+1. Download `pkg_devartgallery_v1.2.0.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.0)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -193,7 +213,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.4 should update through Joomla Update to 1.1.5. After update, set Options → Frontend Mode to Masonry and Thumbnail Mode to Width only where masonry layouts are used.
+Existing sites on 1.1.x should update through Joomla Update to 1.2.0. After update, open Tools → Settings for frontend display and thumbnail cache controls (moved out of Options).
 
 ---
 
@@ -208,8 +228,8 @@ Existing sites on 1.1.4 should update through Joomla Update to 1.1.5. After upda
 
 ### Existing Active Galleries
 
-1. Update to 1.1.5
-2. Set Options → Frontend Mode / Thumbnail Mode as needed (menu Display defaults to Use Global)
+1. Update to 1.2.0
+2. Open Tools → Settings for Frontend Mode / Thumbnail Mode (menu Display defaults to Use Global)
 3. Thumbnail cache regenerates on first frontend access after mode changes
 
 ### Legacy Migration
@@ -263,7 +283,7 @@ Not supported:
 
 **1.1.5**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.5
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.0
 
 Package SHA-256:
 
