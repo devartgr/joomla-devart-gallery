@@ -4,6 +4,30 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.1.5</version>
+        <addition>
+            <item>Added Thumbnail Mode Width only (proportional height) for masonry-friendly thumbnail cache.</item>
+        </addition>
+        <change>
+            <item>Thumbnail Mode options simplified to Fixed size (width + height) and Width only.</item>
+            <item>Thumbnail Mode field is shown above width/height; Height is hidden in Width only mode.</item>
+            <item>Legacy Fit mode maps to Fixed size (crop).</item>
+            <item>Thumbnail HTML dimensions now use the actual generated file size.</item>
+            <item>Existing galleries inherit Component Options again so Options changes affect the frontend; thumbnail media cache is cleared once during that repair.</item>
+            <item>Fixed gallery menu items baking frontend_mode=normal and blocking Options Masonry on component gallery pages.</item>
+            <item>Menu Display fields now Use Global by default; empty values inherit Component Options.</item>
+        </change>
+        <note>
+            <item>Recommended for masonry layouts with thumbnail cache enabled.</item>
+            <item>Changing thumbnail mode regenerates a new cache folder automatically.</item>
+            <item>After update, set Options Frontend Mode to Masonry and Thumbnail Mode to Width only.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.1.4</version>
         <fix>
             <item>Fixed Active gallery hub failing to open for upload, scan, and settings when opened through the Galleries list or index_id route.</item>

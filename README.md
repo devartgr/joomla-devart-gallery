@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.4-orange)
+![Release](https://img.shields.io/badge/Version-1.1.5-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,20 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.1.4** fixes Active gallery hub upload/scan/settings, managed gallery materialization, legacy pagination, and upgraded-site schema compatibility after **1.1.3**.
+Version **1.1.5** adds Thumbnail Mode **Width only** for masonry-friendly cache, restores Options inheritance for galleries and menu items, and fixes menu Display overrides blocking Options Masonry on component gallery pages.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.1.5
+
+- Thumbnail mode **Width only (proportional height)** for masonry-friendly thumbnail cache
+- Thumbnail Mode options simplified to Fixed size and Width only
+- Existing galleries inherit Component Options again (baked-in thumb copies cleared once on update)
+- Thumbnail media cache cleared once during that inheritance repair
+- Gallery menu items default to **Use Global** for Display settings
+- Fixed menu items baking `frontend_mode=normal` and blocking Options Masonry on the frontend
 
 ---
 
@@ -155,7 +166,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.1.4.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.4)
+1. Download `pkg_devartgallery_v1.1.5.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.5)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -182,7 +193,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.3 should update through Joomla Update to 1.1.4. Run **Rebuild Active Index** once if galleries were previously unlinked.
+Existing sites on 1.1.4 should update through Joomla Update to 1.1.5. After update, set Options → Frontend Mode to Masonry and Thumbnail Mode to Width only where masonry layouts are used.
 
 ---
 
@@ -197,9 +208,9 @@ Existing sites on 1.1.3 should update through Joomla Update to 1.1.4. Run **Rebu
 
 ### Existing Active Galleries
 
-1. Update to 1.1.4
-2. Run **Rebuild Active Index** once from Galleries Index
-3. Thumbnail cache builds on first frontend access if missing
+1. Update to 1.1.5
+2. Set Options → Frontend Mode / Thumbnail Mode as needed (menu Display defaults to Use Global)
+3. Thumbnail cache regenerates on first frontend access after mode changes
 
 ### Legacy Migration
 
@@ -250,13 +261,13 @@ Not supported:
 
 ## Current Version
 
-**1.1.4**
+**1.1.5**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.4
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.1.5
 
 Package SHA-256:
 
-`eae288af953b42754941a42c01574a8d0b7a7592908505fce7fe886a8487c7f5`
+`21b9ae1d990a7bae27044701c20d0d284f01c459436e8b106d2c371e5c35069f`
 
 ---
 
