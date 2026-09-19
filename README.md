@@ -281,13 +281,13 @@ Not supported:
 
 ## Current Version
 
-**1.1.5**
+**1.2.0**
 
 Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.0
 
 Package SHA-256:
 
-`21b9ae1d990a7bae27044701c20d0d284f01c459436e8b106d2c371e5c35069f`
+`84ffe1c8961d33e93d9700fbb019046011389f9c4d0af253ef3e23d6dadb0583`
 
 ---
 
