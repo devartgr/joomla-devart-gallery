@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.0-orange)
+![Release](https://img.shields.io/badge/Version-1.2.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,18 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.0** adds an administrator Tools hub with dedicated Settings, new module layouts (Slider, Showcase panels, Stage), Options Media path pickers, and a full language pack refresh.
+Version **1.2.1** adds a Galleries folder-grid module layout, an All Galleries frontend menu type, and Settings menu Itemid binding so gallery links SEF-route under the listing menu (same pattern as DevArt Video/Events).
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.1
+
+- Module layout **Galleries (folder grid)**: all published active galleries as folder icon + title
+- Frontend menu type **All Galleries** (`view=galleries`) as catalog and SEF routing parent
+- Settings: **All Galleries menu item** (`canonical_menu_item`) binds listing Itemid for gallery URLs
+- Gallery links route under the listing menu (`/menu-alias/{id}-{alias}`); Home Itemid no longer drops gallery id
 
 ---
 
