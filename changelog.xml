@@ -4,6 +4,25 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.1</version>
+        <addition>
+            <item>Module layout Galleries (folder grid): lists published active galleries as folder icon + title, linking to the component gallery page.</item>
+            <item>Frontend menu type All Galleries (view=galleries) as folder catalog and SEF routing parent for gallery links.</item>
+            <item>Settings: All Galleries menu item (canonical_menu_item) to bind the listing Itemid for module and component gallery URLs.</item>
+        </addition>
+        <change>
+            <item>Galleries folder grid: SEF-route via exact gallery menu or All Galleries listing menu; otherwise raw component URL so Home Itemid cannot drop the gallery id.</item>
+        </change>
+        <note>
+            <item>Create a menu item of type All Galleries, then select it in Settings → All Galleries menu item.</item>
+            <item>Gallery picker, thumbnail overrides, and popup options are hidden for the module Galleries layout.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.0</version>
         <addition>
             <item>Administrator Tools submenu and hub (Settings and Options cards, shared Galleries Index header banner).</item>
