@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.1-orange)
+![Release](https://img.shields.io/badge/Version-1.2.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,18 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.1** adds a Galleries folder-grid module layout, an All Galleries frontend menu type, and Settings menu Itemid binding so gallery links SEF-route under the listing menu (same pattern as DevArt Video/Events).
+Version **1.2.2** focuses on Joomla 7/8 forward-compatibility: removes scheduled-removal API usage (`AbstractView::get()`, `Table::getDbo()`, `Factory::getCache()`, `Factory::getDate()`) while keeping controller input/application access on the supported BaseController properties.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.2
+
+- Replaced deprecated `AbstractView::get()` with direct model calls in all site/admin HtmlView classes (scheduled removal in Joomla 7.0)
+- Replaced `Table::getDbo()` with `getDatabase()`; `Factory::getCache()` with `CacheControllerFactoryInterface`; `Factory::getDate()` with CMS `Date`
+- Models use `Factory::getApplication()->getInput()` instead of public `$app->input`
+- Admin controllers keep BaseController `$this->input` / `$this->app` (correct Joomla 6 controller API)
 
 ---
 
