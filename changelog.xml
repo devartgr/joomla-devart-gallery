@@ -4,6 +4,25 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.2</version>
+        <change>
+            <item>Replaced deprecated AbstractView::get() with direct model calls in all HtmlView classes (Joomla 7.0 removal).</item>
+            <item>Replaced Table::getDbo() with getDatabase(); Factory::getCache() with CacheControllerFactoryInterface; Factory::getDate() with CMS Date.</item>
+            <item>Models use Factory::getApplication()->getInput() instead of public $app->input.</item>
+        </change>
+        <fix>
+            <item>Admin controllers keep BaseController $this->input / $this->app (getInput/getApplication are not BaseController methods on Joomla 6).</item>
+            <item>Fixes Scan Existing Photos and Settings save fatals from an incorrect controller API migration.</item>
+        </fix>
+        <note>
+            <item>Forward-compatibility maintenance for Joomla 7/8 readiness.</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.1</version>
         <addition>
             <item>Module layout Galleries (folder grid): lists published active galleries as folder icon + title, linking to the component gallery page.</item>
