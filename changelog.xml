@@ -4,6 +4,18 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.3</version>
+        <fix>
+            <item>Frontend menu lookup no longer filters by MenuItem::client_id. SiteMenu already loads only site items and does not expose client_id on MenuItem (same fix class as Documents / Events / Business / Video).</item>
+        </fix>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.2</version>
         <change>
             <item>Replaced deprecated AbstractView::get() with direct model calls in all HtmlView classes (Joomla 7.0 removal).</item>
