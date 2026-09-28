@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.2-orange)
+![Release](https://img.shields.io/badge/Version-1.2.3-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,16 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.2** focuses on Joomla 7/8 forward-compatibility: removes scheduled-removal API usage (`AbstractView::get()`, `Table::getDbo()`, `Factory::getCache()`, `Factory::getDate()`) while keeping controller input/application access on the supported BaseController properties.
+Version **1.2.3** fixes frontend menu lookup so it no longer filters by `MenuItem::client_id` (Joomla `SiteMenu` does not expose that property; same fix class as Documents / Events / Business / Video).
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.3
+
+- Frontend menu lookup no longer filters by `MenuItem::client_id`
+- Avoids PHP 8.x `Undefined property … client_id` warnings from `AbstractMenu::getItems()`
 
 ---
 
