@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.3-orange)
+![Release](https://img.shields.io/badge/Version-1.2.4-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,22 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.3** fixes frontend menu lookup so it no longer filters by `MenuItem::client_id` (Joomla `SiteMenu` does not expose that property; same fix class as Documents / Events / Business / Video).
+Version **1.2.4** is a safety, performance, and hardening release for Joomla 6 editorial sites: scheduled thumbnail retention, per-image alt/caption, EXIF orientation, transparent watermark opacity, and a fixed Database checker manifest name.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.4
+
+- Namespaced `plg_task_devartgallery` with auto-created weekly Scheduled Task for stale thumb retention
+- Per-image alt text and caption (admin + frontend / module / content plugin)
+- Shared thumbnail path helpers; expanded PHPUnit coverage
+- Transparent PNG watermark opacity; JPEG EXIF orientation with memory guard
+- Component admin manifest renamed to `devartgallery.xml` (fixes Joomla Database “One Problem”)
+- CSRF/post-only admin mutations, thumb prewarm tooling, and related hardening from the 1.2.4 cycle
+
+After install/update: run **Tools → Prewarm thumbnails** and confirm the weekly Scheduled Task is enabled.
 
 ---
 
@@ -197,6 +210,7 @@ Install the package only. Do not publish standalone extension ZIPs.
 - `mod_devartgallery` — frontend gallery module
 - `plg_content_devartgallery` — article shortcode renderer
 - `plg_editors-xtd_devartgallery` — editor button for gallery insertion
+- `plg_task_devartgallery` — Scheduled Task plugin for stale thumbnail retention cleanup
 
 All extensions update together through `pkg_devartgallery`.
 
@@ -211,7 +225,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.2.0.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.0)
+1. Download `pkg_devartgallery_v1.2.4.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.4)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -238,7 +252,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.x should update through Joomla Update to 1.2.0. After update, open Tools → Settings for frontend display and thumbnail cache controls (moved out of Options).
+Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.4**. After update, open Tools → Settings, run Prewarm thumbnails once, and confirm the weekly Scheduled Task is enabled.
 
 ---
 
@@ -306,13 +320,13 @@ Not supported:
 
 ## Current Version
 
-**1.2.0**
+**1.2.4**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.0
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.4
 
 Package SHA-256:
 
-`84ffe1c8961d33e93d9700fbb019046011389f9c4d0af253ef3e23d6dadb0583`
+`ce8ecc2173e58734b32bc3feba3d2e09d8c1b0effed1e5d6e8612cf9c76e83d3`
 
 ---
 

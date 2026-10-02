@@ -4,6 +4,44 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.4</version>
+        <fix>
+            <item>PathHelper rejects equal-base deletes and sibling prefix collisions (galleries2-old); managed gallery delete is unified (folder + thumbs + images + index + gallery).</item>
+            <item>GalleryTable keeps alias/path on edit; empty URL-safe titles get a dated alias fallback.</item>
+            <item>Upload allocates a unique filename against disk and DB; ImageProcessor writes atomically via temp+rename; insert failures roll back the file.</item>
+            <item>NewgalleryModel::save() updates existing rows by id instead of always inserting.</item>
+            <item>Package installer enables content/editors-xtd plugins only on clean install (not on update).</item>
+            <item>Module entry functions are guarded with function_exists; PhotosModel thumbnail schema repair is session-guarded; getTableNameForSection uses ?string.</item>
+            <item>New Gallery Cancel no longer fatals: GalleryController::cancel() redirects without calling FormController getTable() on a missing Gallery model.</item>
+            <item>Performance: atomic thumbnail writes, per-request create budget with original fallback, deferred thumb cleanup on shutdown, memoized component params, FE image/catalog LIMITs, watermark via imagecopymerge, page-cache clean after gallery mutations.</item>
+            <item>Modernization: shared GalleryResolver for site/module/content shortcodes (fixes always-true path candidate); SiteAssets + joomla.asset.json via WebAssetManager; mod_devartgallery AbstractModuleDispatcher; namespaced plg_content_devartgallery services provider; component SQL update schemapath for 1.2.4.</item>
+            <item>Frontend SiteAssets uses explicit registerAndUseStyle/Script (media/com_devartgallery/…) so gallery CSS/JS always load; registry-only useStyle could omit site.css and leave thumbs full-width.</item>
+            <item>Hardening: transparent PNG watermark opacity preserves alpha (no imagecopymerge box); page cache is not cleared on upload/scan; POST-only CSRF on admin mutations; removed unused single-delete tasks; site media ships only under media/com_devartgallery; removed deprecated imagedestroy().</item>
+            <item>Performance follow-up: GalleryResolver memoizes base directories via ComponentHelper; FE thumb budget miss sends no-cache headers; admin uploads unrestricted; Tools prewarm + stale-thumb purge; module random order shuffles in PHP (no SQL RAND); JPEG EXIF orientation on upload.</item>
+            <item>Installer no longer loads GallerySchemaHelper in preflight (old class stayed in memory and blocked new image-column migrations on update).</item>
+            <item>Module random with limit &lt;= 0 uses the same unbiased ID-shuffle path as positive limits (up to 5000 IDs).</item>
+            <item>Large-image memory refusal uses language key COM_DEVARTGALLERY_ERROR_IMAGE_MEMORY.</item>
+            <item>Component admin manifest renamed to devartgallery.xml so Joomla Database checker can read the installed version (fixes empty version / One Problem).</item>
+        </fix>
+        <addition>
+            <item>Per-image alt text and caption on Photos (admin edit; lightbox / figcaption / accessibility on frontend, module, and content plugin).</item>
+            <item>plg_task_devartgallery seeds a weekly Scheduled Task on install/update when missing.</item>
+            <item>Unit tests for ThumbnailHelper settingsHash, galleryThumbKey, getSettings, and path safety.</item>
+        </addition>
+        <change>
+            <item>plg_task_devartgallery migrated to namespaced Extension\Devartgallery + services/provider.php (Joomla 6 core task-plugin pattern).</item>
+            <item>ThumbnailHelper shares one thumbRelativePath / path-safety helper between prepareImage and isThumbMissing.</item>
+        </change>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>After install/update: run Tools → Prewarm thumbnails and confirm the weekly Scheduled Task is enabled.</item>
+            <item>Tools Prewarm uses gallery/default thumb settings; module overrides are cleaned by retention but not prewarmed.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.3</version>
         <fix>
             <item>Frontend menu lookup no longer filters by MenuItem::client_id. SiteMenu already loads only site items and does not expose client_id on MenuItem (same fix class as Documents / Events / Business / Video).</item>
