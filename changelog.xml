@@ -4,6 +4,37 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.5</version>
+        <fix>
+            <item>Concurrent uploads claim unique filenames with exclusive create (fopen x) so two requests cannot share one name.</item>
+            <item>Index rebuild upserts rows first, then deletes orphans (no wipe-first empty window).</item>
+            <item>Bulk photo delete removes database rows only after confirmed filesystem unlink (or when the file is already gone).</item>
+            <item>Tools Prewarm and stale-thumb cleanup walk galleries by id cursor in batches (no hard 500-gallery ceiling).</item>
+            <item>Failed uploads release the empty exclusive-create claim file so corrupt images do not leave 0-byte placeholders.</item>
+            <item>Thumbnail cleanup preserves uppercase source extensions (e.g. IMG_1.JPG) on case-sensitive filesystems instead of treating their thumbs as orphans.</item>
+            <item>Unreachable-thumb cleanup still runs when thumbnail_retention_days is 0; only settings-hash retention is skipped.</item>
+            <item>Frontend adopts/renames legacy ≤1.2.4 thumbs onto the new identity path so large galleries do not briefly show originals after upgrade.</item>
+            <item>Frontend cold-create budget defaults to max_images_per_gallery (was 6) so one page view can refill thumbs after a cache wipe.</item>
+            <item>Cleanup keeps adoptable legacy stem.format thumbs while the source still exists.</item>
+            <item>Legacy thumb adoption is limited to the same settings-hash folder and skips candidates older than the source or ambiguous stems.</item>
+            <item>Non-blocking flock around frontend thumb creation reduces duplicate concurrent encodes.</item>
+            <item>Options: frontend_thumb_create_budget (0 = Max images per gallery, capped at 200).</item>
+        </fix>
+        <change>
+            <item>Thumbnail cache filenames include original extension and a short source identity so replacements and same-stem different-extension files do not reuse a stale cache entry.</item>
+            <item>Stale thumb cleanup also removes unreachable files inside the current settings-hash folder (legacy names, wrong identity, orphans) with a 24-hour grace period.</item>
+        </change>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Existing thumbnails regenerate on next view or Tools Prewarm after update.</item>
+            <item>After upgrading from 1.2.4 or earlier: run Tools Prewarm, then Cleanup (or leave the weekly Scheduled Task) to free old thumb disk space.</item>
+            <item>Frontend All Galleries catalog remains soft-capped at 200 rows; Tools cursor covers all galleries.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.4</version>
         <fix>
             <item>PathHelper rejects equal-base deletes and sibling prefix collisions (galleries2-old); managed gallery delete is unified (folder + thumbs + images + index + gallery).</item>

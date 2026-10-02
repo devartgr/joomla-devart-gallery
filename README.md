@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.4-orange)
+![Release](https://img.shields.io/badge/Version-1.2.5-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,23 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.4** is a safety, performance, and hardening release for Joomla 6 editorial sites: scheduled thumbnail retention, per-image alt/caption, EXIF orientation, transparent watermark opacity, and a fixed Database checker manifest name.
+Version **1.2.5** hardens concurrent uploads, index rebuild, photo delete, and thumbnail caching for large editorial sites (source-identity thumb names, safe legacy adoption, create locks, and a configurable frontend create budget).
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.5
+
+- Atomic unique upload filenames (`fopen` exclusive create) and release of empty claim files on failed processing
+- Index rebuild upserts first, then deletes orphans (no wipe-first empty window)
+- Bulk photo delete removes DB rows only after confirmed filesystem unlink
+- Tools Prewarm / stale cleanup walk galleries by id cursor (no hard 500-gallery ceiling)
+- Thumbnail names include original extension + short source identity (replacements and same-stem different extensions no longer share a stale cache entry)
+- Cleanup preserves uppercase source extensions on case-sensitive filesystems; unreachable thumbs cleaned with a 24h grace period
+- Same-hash legacy thumb adoption (mtime-safe); concurrent create lock; Options `frontend_thumb_create_budget`
+
+After install/update: run **Tools → Prewarm thumbnails**, then **Cleanup** (or leave the weekly Scheduled Task enabled). Module size overrides use separate cache folders and need a page view or Prewarm to fill.
 
 ---
 
@@ -225,7 +239,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.2.4.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.4)
+1. Download `pkg_devartgallery_v1.2.5.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.5)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -252,7 +266,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.4**. After update, open Tools → Settings, run Prewarm thumbnails once, and confirm the weekly Scheduled Task is enabled.
+Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.5**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
 
 ---
 
@@ -320,9 +334,9 @@ Not supported:
 
 ## Current Version
 
-**1.2.4**
+**1.2.5**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.4
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.5
 
 Package SHA-256:
 
