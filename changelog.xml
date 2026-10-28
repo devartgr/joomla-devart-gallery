@@ -4,6 +4,23 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.6</version>
+        <addition>
+            <item>Module layout Scatter: table-style prints with tilt, density, frame, and shadow options (limit 3–16, default 6).</item>
+            <item>Scatter print size follows the effective thumbnail width; each print keeps the real thumb/source aspect ratio (no forced portrait crop on landscape).</item>
+        </addition>
+        <change>
+            <item>Scatter defaults tuned for mid spacing (density 22, tilt 50) with light irregular overlap.</item>
+        </change>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>For mixed portrait/landscape galleries, Width only thumbs give the sharpest Scatter results.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.5</version>
         <fix>
             <item>Concurrent uploads claim unique filenames with exclusive create (fopen x) so two requests cannot share one name.</item>

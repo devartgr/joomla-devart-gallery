@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.5-orange)
+![Release](https://img.shields.io/badge/Version-1.2.6-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,20 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.5** hardens concurrent uploads, index rebuild, photo delete, and thumbnail caching for large editorial sites (source-identity thumb names, safe legacy adoption, create locks, and a configurable frontend create budget).
+Version **1.2.6** adds the module **Scatter** layout (table-style prints) on top of the 1.2.5 thumbnail and upload hardening for large editorial sites.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.6
+
+- Module layout **Scatter**: organic table-style photo prints (tilt, density, frame, shadow; limit 3–16, default 6)
+- Print size follows the effective thumbnail width (e.g. Settings **400**)
+- Each print keeps the real thumb/source aspect ratio — no forced portrait crop on landscape images
+- Defaults tuned for mid spacing (density 22, tilt 50)
+
+After install/update: choose layout **Scatter** on a module. For mixed portrait/landscape galleries, prefer thumbnail mode **Width only**. Existing module instances may keep older Density values — set **22** for the new mid spacing.
 
 ---
 
@@ -205,10 +216,10 @@ Active gallery examples:
 - Content plugin renders gallery shortcodes in articles
 - Editor button inserts shortcodes from an indexed gallery picker
 - Site module displays galleries in any module position
-- Module layouts: Default grid (Settings inherit), Slider, Showcase panels, Stage
+- Module layouts: Default grid (Settings inherit), Slider, Showcase panels, Stage, Scatter
 - Normal Grid and Masonry for Default grid; lightweight popup viewer
 - Optional module thumbnail size override; Full width display
-- Image limits with safety caps; dedicated smaller limits for Slider and Stage
+- Image limits with safety caps; dedicated smaller limits for Slider, Stage, and Scatter
 
 ### Menu Item Integration
 
@@ -239,7 +250,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.2.5.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.5)
+1. Download `pkg_devartgallery_v1.2.6.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.6)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -266,7 +277,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.5**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
+Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.6**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
 
 ---
 
@@ -334,13 +345,13 @@ Not supported:
 
 ## Current Version
 
-**1.2.5**
+**1.2.6**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.5
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.6
 
 Package SHA-256:
 
-`ce8ecc2173e58734b32bc3feba3d2e09d8c1b0effed1e5d6e8612cf9c76e83d3`
+`b7fcd43128e8d866f322f04491ee99cb337727ac10edf4b34c68badda10f7d3b`
 
 ---
 
