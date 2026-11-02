@@ -4,6 +4,26 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.8</version>
+        <addition>
+            <item>All Galleries menu: optional Include legacy galleries (default No; active first, then legacy).</item>
+            <item>All Galleries pagination with configurable page size (12–100, default 48).</item>
+            <item>Legacy catalog links open by path.</item>
+            <item>Admin/site language keys for the new All Galleries menu fields in all packaged locales.</item>
+        </addition>
+        <change>
+            <item>Removed the silent 200-row hard cap on the All Galleries listing in favour of real pagination.</item>
+        </change>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Existing All Galleries menu items stay active-only until Include legacy is enabled.</item>
+            <item>Catalog order: active first, then legacy; managed galleries use admin ordering; title is the tie-breaker.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.7</version>
         <fix>
             <item>Folder image scans match uppercase extensions (.JPG, .PNG) on case-sensitive filesystems.</item>
