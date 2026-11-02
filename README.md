@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.6-orange)
+![Release](https://img.shields.io/badge/Version-1.2.7-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,23 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.6** adds the module **Scatter** layout (table-style prints) on top of the 1.2.5 thumbnail and upload hardening for large editorial sites.
+Version **1.2.7** improves cold-path stability and performance (case-insensitive folder scans, FE thumb memory guard, fewer alias/resolver queries) on top of the 1.2.6 Scatter layout.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.7
+
+- Folder image scans match uppercase extensions (`.JPG`, `.PNG`) on case-sensitive filesystems
+- Frontend on-demand thumbnail creation refuses oversized decodes that would exceed memory (falls back to original URL)
+- Large folder galleries read metadata only for the display-limited file set
+- All Galleries / module gallery links reuse listing aliases (no per-row alias query)
+- GalleryResolver uses fewer path lookups with per-request memoization
+- Crop thumbs skip `getimagesize` for dimensions; stem uniqueness uses one scandir per directory per request
+- Component params read via `ComponentHelper` (no raw `#__extensions` queries)
+
+After install/update: normal use. Optional: run **Tools → Prewarm thumbnails** once if you wiped thumb cache.
 
 ---
 
@@ -250,7 +264,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.2.6.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.6)
+1. Download `pkg_devartgallery_v1.2.7.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.7)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -277,7 +291,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.6**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
+Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.7**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
 
 ---
 
@@ -345,13 +359,13 @@ Not supported:
 
 ## Current Version
 
-**1.2.6**
+**1.2.7**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.6
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.7
 
 Package SHA-256:
 
-`b7fcd43128e8d866f322f04491ee99cb337727ac10edf4b34c68badda10f7d3b`
+`6716d9bb1e0ff80a421f7f8f25f12578399831edd3baf9751e76057b1270bfff`
 
 ---
 
