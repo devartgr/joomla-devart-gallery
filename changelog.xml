@@ -4,26 +4,6 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
-        <version>1.2.7</version>
-        <fix>
-            <item>Folder image scans match uppercase extensions (.JPG, .PNG) on case-sensitive filesystems.</item>
-            <item>Frontend on-demand thumbnail creation refuses oversized decodes that would exceed memory and falls back to the original URL.</item>
-        </fix>
-        <change>
-            <item>Large folder galleries read metadata only for the display-limited file set.</item>
-            <item>All Galleries and module gallery links reuse listing aliases (no per-row alias query).</item>
-            <item>GalleryResolver uses fewer path lookups with per-request memoization.</item>
-            <item>Crop thumbs skip getimagesize for dimensions; stem uniqueness uses one scandir per gallery directory per request.</item>
-            <item>Component params read via ComponentHelper (no raw #__extensions queries).</item>
-        </change>
-        <note>
-            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
-        </note>
-    </changelog>
-
-    <changelog>
-        <element>pkg_devartgallery</element>
-        <type>package</type>
         <version>1.2.6</version>
         <addition>
             <item>Module layout Scatter: table-style prints with tilt, density, frame, and shadow options (limit 3–16, default 6).</item>
