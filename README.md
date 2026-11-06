@@ -4,7 +4,7 @@ Professional image gallery package for Joomla 6, designed for editorial, news, m
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.8-orange)
+![Release](https://img.shields.io/badge/Version-1.2.9-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -15,9 +15,20 @@ DevArt Gallery is a modern Joomla 6 gallery package for stable image gallery man
 
 It is designed for editorial, magazine, newspaper, portal, and high-traffic Joomla websites that need a clean, secure, reliable, and migration-friendly gallery workflow without unnecessary frontend bloat.
 
-Version **1.2.8** adds All Galleries catalog pagination and an optional Include legacy galleries switch for large sites, on top of the 1.2.7 cold-path improvements.
+Version **1.2.9** improves Manage Photos paging/UX and adds optional gallery cover photos for folder catalogs.
 
 Built specifically for Joomla 6 and PHP 8.3+.
+
+---
+
+## What's New in 1.2.9
+
+- Manage Photos keeps the current page after Save text (alt/caption), cover changes, and bulk delete
+- Admin photos-per-page default is owned by Gallery Options (default 50; no longer follows Global `list_limit`)
+- Gallery cover photo: choose a photo, or keep the default folder icon (All Galleries + module Galleries layout)
+- Save text / cover no longer redirect to the component dashboard
+
+Image tags remain planned for a future release.
 
 ---
 
@@ -278,7 +289,7 @@ All extensions update together through `pkg_devartgallery`.
 
 ## Installation
 
-1. Download `pkg_devartgallery_v1.2.8.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.8)
+1. Download `pkg_devartgallery_v1.2.9.zip` from [GitHub Releases](https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.9)
 2. Go to `System → Install → Extensions`
 3. Upload the package ZIP
 4. Open `Components → DevArt Gallery`
@@ -305,7 +316,7 @@ Once installed, later updates appear under:
 
 `System → Update → Extensions`
 
-Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.8**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
+Existing sites on 1.1.x / 1.2.x should update through Joomla Update to **1.2.9**. After update, open Tools → Settings, run Prewarm thumbnails once, then Cleanup (or leave the weekly Scheduled Task enabled).
 
 ---
 
@@ -373,13 +384,13 @@ Not supported:
 
 ## Current Version
 
-**1.2.8**
+**1.2.9**
 
-Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.8
+Release: https://github.com/devartgr/joomla-devart-gallery/releases/tag/v1.2.9
 
 Package SHA-256:
 
-`971941213137d63fb4c2ed7f76a84a78c0e5d97ffff19a157e3f648a5fcc5ac9`
+`0a265013de47ad88c131656843b417ab5711d62b5dd7538323859b2f4816440e`
 
 ---
 

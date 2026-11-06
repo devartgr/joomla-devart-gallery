@@ -4,6 +4,26 @@
     <changelog>
         <element>pkg_devartgallery</element>
         <type>package</type>
+        <version>1.2.9</version>
+        <fix>
+            <item>Manage Photos keeps the current page and per-page limit after Save text, cover changes, and bulk delete.</item>
+            <item>Manage Photos Save text / cover actions no longer redirect to the component dashboard.</item>
+            <item>Manage Photos default page size no longer follows Global Configuration list_limit.</item>
+        </fix>
+        <addition>
+            <item>Component Options: Admin photos per page (default 50; 20/50/100/200).</item>
+            <item>Gallery cover photo: choose a photo as cover, or keep the default folder icon (All Galleries + module Galleries layout).</item>
+        </addition>
+        <note>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Cover applies to managed (active) galleries only; legacy folders keep the folder icon.</item>
+            <item>Image tags (filter one gallery by city/topic tags) are planned for a future release.</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartgallery</element>
+        <type>package</type>
         <version>1.2.8</version>
         <addition>
             <item>All Galleries menu: optional Include legacy galleries (default No; active first, then legacy).</item>
